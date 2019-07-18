@@ -266,7 +266,6 @@ export class SuiSearch<T> implements AfterViewInit {
 
     @HostListener("focusout", ["$event"])
     public onFocusOut(e:IFocusEvent):void {
-        console.log(e);
         if (!this._element.nativeElement.contains(e.relatedTarget)) {
             this.dropdownService.setOpenState(false);
         }
