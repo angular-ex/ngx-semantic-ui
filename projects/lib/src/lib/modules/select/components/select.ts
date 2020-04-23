@@ -1,4 +1,13 @@
-import { Component, ViewContainerRef, ViewChild, Output, EventEmitter, ElementRef, Directive, Input } from "@angular/core";
+import {
+    Component,
+    ViewContainerRef,
+    ViewChild,
+    Output,
+    EventEmitter,
+    ElementRef,
+    Directive,
+    Input
+} from "@angular/core";
 import { ICustomValueAccessorHost, customValueAccessorFactory, CustomValueAccessor } from "../../../misc/util/internal";
 import { SuiLocalizationService } from "../../../behaviors/localization/internal";
 import { SuiSelectBase } from "../classes/select-base";

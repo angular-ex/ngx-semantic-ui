@@ -1,4 +1,12 @@
-import { Component, HostBinding, ElementRef, EventEmitter, Output, Input, Directive } from "@angular/core";
+import {
+    Component,
+    HostBinding,
+    ElementRef,
+    EventEmitter,
+    Output,
+    Input,
+    Directive
+} from "@angular/core";
 import { ICustomValueAccessorHost, KeyCode, customValueAccessorFactory, CustomValueAccessor } from "../../../misc/util/internal";
 import { SuiLocalizationService } from "../../../behaviors/localization/internal";
 import { SuiSelectBase } from "../classes/select-base";
