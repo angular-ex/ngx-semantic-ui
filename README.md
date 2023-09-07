@@ -15,11 +15,11 @@
   <a href="https://github.com/angular-ex/ngx-semantic-ui/actions/workflows/development.yml">
     <img alt="Test CI" src="https://github.com/angular-ex/ngx-semantic-ui/actions/workflows/development.yml/badge.svg?branch=main&event=push" />
   </a>
-  <a href="https://www.npmjs.com/package/ng2-semantic-ui">
-    <img alt="npm" src="https://img.shields.io/npm/v/ng2-semantic-ui.svg?style=flat-square" />
+  <a href="https://www.npmjs.com/package/@angular-ex/semantic-ui">
+    <img alt="npm" src="https://img.shields.io/npm/v/@angular-ex/semantic-ui.svg?style=flat-square" />
   </a>
-  <a href="https://www.npmjs.com/package/ng2-semantic-ui">
-    <img alt="monthly downloads" src="https://img.shields.io/npm/dm/ng2-semantic-ui.svg?style=flat-square" />
+  <a href="https://www.npmjs.com/package/@angular-ex/semantic-ui">
+    <img alt="monthly downloads" src="https://img.shields.io/npm/dm/@angular-ex/semantic-ui.svg?style=flat-square" />
   </a>
 </p>
 
@@ -33,7 +33,11 @@ Note that only Semantic UI elements that use jQuery are recreated here - those w
 
 ## Installation & Usage
 
-See the [Documentation](https://edcarroll.github.io/ng2-semantic-ui) for installation instructions and extensive examples.
+```
+$ npm install @angular-ex/semantic-ui --save
+```
+
+See the [Documentation](https://edcarroll.github.io/ng2-semantic-ui) for more instructions and extensive examples.
 
 ## Dependencies
 
