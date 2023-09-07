@@ -22,9 +22,9 @@ export class SuiProgress {
     @HostBinding("class.progress")
     public readonly hasClasses:boolean;
 
-    private _value:number;
-    private _maximum:number;
-    private _precision:number;
+    private _value!:number;
+    private _maximum!:number;
+    private _precision!:number;
 
     private _overrideSuccess:boolean;
 

@@ -1,3 +1,4 @@
+export * from "./helpers/coercion";
 export * from "./helpers/custom-validator";
 export * from "./helpers/custom-value-accessor";
 export * from "./helpers/date";

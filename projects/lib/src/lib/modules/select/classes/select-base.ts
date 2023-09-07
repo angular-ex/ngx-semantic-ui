@@ -1,6 +1,6 @@
 import {
     ViewChild, HostBinding, ElementRef, HostListener, Input, ContentChildren, QueryList,
-    AfterContentInit, TemplateRef, ViewContainerRef, ContentChild, EventEmitter, Output, OnDestroy
+    AfterContentInit, TemplateRef, ViewContainerRef, ContentChild, EventEmitter, Output, OnDestroy, Directive
 } from "@angular/core";
 import { Subscription } from "rxjs";
 import { DropdownService, SuiDropdownMenu } from "../../dropdown/internal";
@@ -16,16 +16,17 @@ export interface IOptionContext<T> extends ITemplateRefContext<T> {
 
 // We use generic type T to specify the type of the options we are working with,
 // and U to specify the type of the property of the option used as the value.
+@Directive()
 export abstract class SuiSelectBase<T, U> implements AfterContentInit, OnDestroy {
     public dropdownService:DropdownService;
     public searchService:SearchService<T, U>;
 
     @ViewChild(SuiDropdownMenu)
-    protected _menu:SuiDropdownMenu;
+    protected _menu!:SuiDropdownMenu;
 
     // Keep track of all of the rendered select options. (Rendered by the user using *ngFor).
     @ContentChildren(SuiSelectOption, { descendants: true })
-    protected _renderedOptions:QueryList<SuiSelectOption<T>>;
+    protected _renderedOptions!:QueryList<SuiSelectOption<T>>;
 
     // Keep track of all of the subscriptions to the selected events on the rendered options.
     private _renderedSubscriptions:Subscription[];
@@ -48,7 +49,7 @@ export abstract class SuiSelectBase<T, U> implements AfterContentInit, OnDestroy
     @Input()
     public isSearchable:boolean;
 
-    public isSearchExternal:boolean;
+    public isSearchExternal!:boolean;
 
     @HostBinding("class.search")
     public get hasSearchClass():boolean {
@@ -179,7 +180,7 @@ export abstract class SuiSelectBase<T, U> implements AfterContentInit, OnDestroy
     }
 
     @Input()
-    public valueField:string;
+    public valueField!:string;
 
     public get valueGetter():(obj:T) => U {
         // Helper function to retrieve the value from an item.
@@ -187,7 +188,7 @@ export abstract class SuiSelectBase<T, U> implements AfterContentInit, OnDestroy
     }
 
     @Input()
-    public optionTemplate:TemplateRef<IOptionContext<T>>;
+    public optionTemplate!:TemplateRef<IOptionContext<T>>;
 
     private _optionFormatter?:(o:T, q?:string) => string;
 
@@ -206,8 +207,8 @@ export abstract class SuiSelectBase<T, U> implements AfterContentInit, OnDestroy
         this._optionFormatter = formatter;
     }
 
-    private _localeValues:ISelectLocaleValues;
-    public localeOverrides:RecursivePartial<ISelectLocaleValues>;
+    private _localeValues!:ISelectLocaleValues;
+    public localeOverrides!:RecursivePartial<ISelectLocaleValues>;
 
     public get localeValues():ISelectLocaleValues {
         return this._localizationService.override<"select">(this._localeValues, this.localeOverrides);

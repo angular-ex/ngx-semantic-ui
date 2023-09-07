@@ -3,7 +3,7 @@ import {
     Input, TemplateRef
 } from "@angular/core";
 import { ITemplateRefContext, SuiComponentFactory } from "../../../misc/util/internal";
-import { IResultContext } from "./search";
+import type { IResultContext } from "./search";
 
 // See https://github.com/Microsoft/TypeScript/issues/13449.
 const templateRef = TemplateRef;
@@ -21,10 +21,10 @@ export class SuiSearchResult<T> {
     public readonly hasClasses:boolean;
 
     @Input()
-    public value:T;
+    public value!:T;
 
     @Input()
-    public query:string;
+    public query!:string;
 
     // Returns the label from a given value.
     @Input()
@@ -49,7 +49,7 @@ export class SuiSearchResult<T> {
 
     // Placeholder to draw template beside.
     @ViewChild("templateSibling", { read: ViewContainerRef })
-    public templateSibling:ViewContainerRef;
+    public templateSibling!:ViewContainerRef;
 
     constructor(public componentFactory:SuiComponentFactory) {
         this.hasClasses = true;

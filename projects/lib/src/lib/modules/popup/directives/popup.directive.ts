@@ -1,5 +1,5 @@
 import { Directive, Input, ElementRef, TemplateRef, Renderer2 } from "@angular/core";
-import { ITemplateRefContext, Util, PositioningPlacement, SuiComponentFactory } from "../../../misc/util/internal";
+import { ITemplateRefContext, Util, PositioningPlacement, SuiComponentFactory, BooleanInput, coerceBooleanProperty } from "../../../misc/util/internal";
 import { SuiPopup } from "../components/popup";
 import { PopupConfig, PopupTrigger, PopupSize, PopupWidth } from "../classes/popup-config";
 import { SuiPopupConfig } from "../services/popup.service";
@@ -24,23 +24,23 @@ export class SuiPopupDirective<T> extends SuiPopupTemplateController<T> {
     }
 
     @Input()
-    public set popupInverted(inverted:boolean) {
-        this.popup.config.isInverted = Util.DOM.parseBooleanAttribute(inverted);
+    public set popupInverted(inverted:BooleanInput) {
+        this.popup.config.isInverted = Util.DOM.parseBooleanAttribute(coerceBooleanProperty(inverted));
     }
 
     @Input()
-    public set popupBasic(basic:boolean) {
-        this.popup.config.isBasic = Util.DOM.parseBooleanAttribute(basic);
+    public set popupBasic(basic:BooleanInput) {
+        this.popup.config.isBasic = Util.DOM.parseBooleanAttribute(coerceBooleanProperty(basic));
     }
 
     @Input()
-    public set popupInline(inline:boolean) {
-        this.popup.config.isInline = Util.DOM.parseBooleanAttribute(inline);
+    public set popupInline(inline:BooleanInput) {
+        this.popup.config.isInline = Util.DOM.parseBooleanAttribute(coerceBooleanProperty(inline));
     }
 
     @Input()
-    public set popupFlowing(flowing:boolean) {
-        this.popup.config.isFlowing = Util.DOM.parseBooleanAttribute(flowing);
+    public set popupFlowing(flowing:BooleanInput) {
+        this.popup.config.isFlowing = Util.DOM.parseBooleanAttribute(coerceBooleanProperty(flowing));
     }
 
     @Input()

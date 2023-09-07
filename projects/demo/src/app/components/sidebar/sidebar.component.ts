@@ -9,7 +9,7 @@ interface IAugmentedElement extends Element {
 @Component({
     selector: "demo-sidebar",
     templateUrl: "./sidebar.component.html",
-    styleUrls: ["./sidebar.component.css"]
+    styleUrls: ["./sidebar.component.scss"]
 })
 export class SidebarComponent {
     @Output()

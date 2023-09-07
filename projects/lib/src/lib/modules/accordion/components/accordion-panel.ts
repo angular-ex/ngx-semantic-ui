@@ -30,7 +30,7 @@ import { TransitionController, Transition } from "../../transition/internal";
 `]
 })
 export class SuiAccordionPanel {
-    private _service:SuiAccordionService;
+    private _service!:SuiAccordionService;
 
     public transitionController:TransitionController;
 
@@ -40,7 +40,7 @@ export class SuiAccordionPanel {
     }
 
     @Input()
-    public isDisabled:boolean;
+    public isDisabled!:boolean;
 
     private _isOpen:boolean;
 

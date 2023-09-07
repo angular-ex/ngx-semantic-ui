@@ -1,10 +1,10 @@
 import { Component, HostBinding } from "@angular/core";
-import { SuiPopupConfig } from "ng2-semantic-ui";
+import { SuiPopupConfig } from "ngx-semantic-ui";
 
 @Component({
     selector: "demo-root",
     templateUrl: "./app.component.html",
-    styleUrls: ["./app.component.css"]
+    styleUrls: ["./app.component.scss"]
 })
 export class AppComponent {
     constructor(popupConfig:SuiPopupConfig) {

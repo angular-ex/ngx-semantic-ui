@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ApiDefinition } from "../../../components/api/api.component";
-import { SuiModalService } from "ng2-semantic-ui";
+import { SuiModalService } from "ngx-semantic-ui";
 import { AlertModal } from "../../../modals/alert.modal";
 
 const exampleStandardTemplate = `
@@ -182,9 +182,9 @@ export class SearchExampleStandard {
     template: exampleRemoteTemplate
 })
 export class SearchExampleRemote extends SearchExampleStandard {
-    public last:IOption;
+    public last!:IOption | IOption[];
 
-    public async optionsSearch(query:string):Promise<IOption[]> {
+    public optionsSearch: any = async (query:string):Promise<IOption[]> => {
         const options = SearchExampleStandard.standardOptions.map((o:string) => ({ title: o }));
 
         return new Promise<IOption[]>(resolve => {
@@ -192,7 +192,7 @@ export class SearchExampleRemote extends SearchExampleStandard {
                 .filter(o => o.title.slice(0, query.length).toLowerCase() === query.toLowerCase());
             setTimeout(() => resolve(results), 300);
         });
-    }
+    };
 }
 
 @Component({

@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
 import { ApiDefinition } from "../../../components/api/api.component";
-import { SuiPopupConfig } from "ng2-semantic-ui";
+import { SuiPopupConfig, PopupPlacement } from "ngx-semantic-ui";
 
 const exampleStandardTemplate = `
 <button class="ui green icon button" suiPopup popupHeader="Example" popupText="This is an example popup">
@@ -204,7 +204,7 @@ export class PopupPage {
         "right bottom"
     ];
 
-    public position:string = "bottom right";
+    public position:PopupPlacement = "bottom right";
 
     public manualPopupMarkup:string = `
 <div class="ui segment" suiPopup popupText="Manual" popupTrigger="manual" #popup="suiPopup">
@@ -216,7 +216,7 @@ export class PopupPage {
 `;
 
     public manualPopupCode:string = `
-import {IPopup} from "ng2-semantic-ui";
+import {IPopup} from "ngx-semantic-ui";
 
 @Component({})
 export class MyComponent {
@@ -231,7 +231,7 @@ export class MyComponent {
 `;
 
     public globalConfigCode:string = `
-import {SuiPopupConfig} from "ng2-semantic-ui";
+import {SuiPopupConfig} from "ngx-semantic-ui";
 
 @Component({})
 export class MyComponent {
@@ -264,7 +264,7 @@ export class PopupExampleTemplate {}
 })
 export class PopupExamplePlacement {
     @Input()
-    public position:string = "right bottom";
+    public position:PopupPlacement = "right bottom";
 }
 
 @Component({

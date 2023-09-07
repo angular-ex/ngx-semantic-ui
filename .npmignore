@@ -7,8 +7,8 @@ npm-debug.log
 # *.js
 # *.map
 # *.d.ts
-demo
-src
+/projects
+/scripts
 
 # JetBrains
 .idea
@@ -22,7 +22,3 @@ Desktop.ini
 # Mac
 .DS_Store
 **/.DS_Store
-
-# TS Files
-*.ts
-!*.d.ts

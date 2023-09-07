@@ -215,8 +215,8 @@ export class DropdownExampleFileMenu {}
     template: exampleStandardTemplate
 })
 export class DropdownExampleStandard {
-    public isOpen:boolean;
-    public isDisabled:boolean;
+    public isOpen!:boolean;
+    public isDisabled!:boolean;
 }
 
 @Component({

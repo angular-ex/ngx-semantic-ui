@@ -70,16 +70,18 @@ import { PositioningPlacement } from "../../../misc/util/internal";
 })
 export class SuiPopupArrow {
     @Input()
-    public placement:PositioningPlacement;
+    public placement!:PositioningPlacement;
 
     @HostBinding("class.inverted")
     @Input()
-    public inverted:boolean;
+    public inverted!:boolean;
 
     public get direction():string | undefined {
         if (this.placement) {
             return this.placement.split(" ").shift();
         }
+
+        return undefined;
     }
 
     public get alignment():string | undefined {
@@ -90,5 +92,7 @@ export class SuiPopupArrow {
             }
             return alignment;
         }
+
+        return undefined;
     }
 }

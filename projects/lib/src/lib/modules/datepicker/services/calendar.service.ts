@@ -11,7 +11,7 @@ export enum CalendarMode {
 }
 
 export class CalendarService {
-    private _config:CalendarConfig;
+    private _config!:CalendarConfig;
 
     public get config():CalendarConfig {
         return this._config;
@@ -22,7 +22,7 @@ export class CalendarService {
         config.updateBounds(this._selectedDate || this.currentDate);
     }
 
-    public currentView:CalendarViewType;
+    public currentView!:CalendarViewType;
     public get inFinalView():boolean {
         return this.currentView === this.config.mappings.finalView;
     }
@@ -71,7 +71,7 @@ export class CalendarService {
         this._maxDate = max;
     }
 
-    private _firstDayOfWeek:number;
+    private _firstDayOfWeek!:number;
 
     public get firstDayOfWeek():number {
         return this._firstDayOfWeek;

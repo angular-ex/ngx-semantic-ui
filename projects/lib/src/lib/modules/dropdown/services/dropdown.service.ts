@@ -13,7 +13,7 @@ export class DropdownService {
     // Open state of the dropdown
     public isOpen:boolean;
     // Animating state of the dropdown.
-    public isAnimating:boolean;
+    public isAnimating!:boolean;
     // Emitter for when dropdown open state changes.
     public isOpenChange:EventEmitter<boolean>;
 

@@ -16,7 +16,7 @@ export class ModalConfig<T, U = undefined, V = undefined> {
     // Determines whether the modal can be closed with a close button, clicking outside, or the escape key.
     public isClosable:boolean;
     // Value to deny with when closing via `isClosable`.
-    public closeResult:V;
+    public closeResult!:V;
 
     // Data to pass to the modal instance when opened.
     public context?:T;

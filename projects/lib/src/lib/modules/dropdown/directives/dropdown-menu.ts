@@ -19,7 +19,7 @@ export class SuiDropdownMenuItem {
         return element.classList.contains("disabled");
     }
 
-    private _isSelected:boolean;
+    private _isSelected!:boolean;
 
     public get isSelected():boolean {
         return this._isSelected;
@@ -38,7 +38,7 @@ export class SuiDropdownMenuItem {
     public selectedClass:string;
 
     @ContentChild(forwardRef(() => SuiDropdownMenu))
-    public childDropdownMenu:SuiDropdownMenu;
+    public childDropdownMenu!:SuiDropdownMenu;
 
     public get hasChildDropdown():boolean {
         return !!this.childDropdownMenu;
@@ -60,7 +60,7 @@ export class SuiDropdownMenuItem {
     selector: "[suiDropdownMenu]"
 })
 export class SuiDropdownMenu extends SuiTransition implements AfterContentInit, OnDestroy {
-    private _service:DropdownService;
+    private _service!:DropdownService;
     private _transitionController:TransitionController;
 
     @Input()
@@ -107,9 +107,9 @@ export class SuiDropdownMenu extends SuiTransition implements AfterContentInit, 
     }
 
     @ContentChildren(SuiDropdownMenuItem)
-    private _itemsQueryInternal:QueryList<SuiDropdownMenuItem>;
+    private _itemsQueryInternal!:QueryList<SuiDropdownMenuItem>;
 
-    private _itemsQueryOverride:QueryList<SuiDropdownMenuItem>;
+    private _itemsQueryOverride!:QueryList<SuiDropdownMenuItem>;
 
     public set items(items:QueryList<SuiDropdownMenuItem>) {
         this._itemsQueryOverride = items;
@@ -126,7 +126,7 @@ export class SuiDropdownMenu extends SuiTransition implements AfterContentInit, 
 
     // Stack that keeps track of the currently selected item.
     // Selected items lower in the stack are necessarily the parent of the item one higher.
-    public selectedItems:SuiDropdownMenuItem[];
+    public selectedItems!:SuiDropdownMenuItem[];
 
     // Sets whether or not to automatically select the 1st item when the dropdown is opened.
     @Input()
@@ -205,6 +205,7 @@ export class SuiDropdownMenu extends SuiTransition implements AfterContentInit, 
                     break;
                 }
                 // Enter : if the item doesn't contain a nested dropdown, 'click' it. Otherwise, fall through to 'Right' action.
+                // @ts-ignore
                 case KeyCode.Enter: {
                     if (selected && !selected.hasChildDropdown) {
                         selected.performClick();

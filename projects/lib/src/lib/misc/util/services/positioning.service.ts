@@ -111,10 +111,10 @@ export class PositioningService {
     public readonly anchor:ElementRef;
     public readonly subject:ElementRef;
 
-    private _popper:PopperInstance;
-    private _popperState:Data;
+    private _popper!:PopperInstance;
+    private _popperState!:Data;
     private _placement:PositioningPlacement;
-    private _hasArrow:boolean;
+    private _hasArrow!:boolean;
     private _arrowSelector:string | undefined;
 
     public get placement():PositioningPlacement {
@@ -186,8 +186,8 @@ export class PositioningService {
             {
                 placement: placementToPopper(this._placement),
                 modifiers,
-                onCreate: initial => this._popperState = initial,
-                onUpdate: update => this._popperState = update
+                onCreate: (initial: any) => this._popperState = initial,
+                onUpdate: (update: any) => this._popperState = update
             }) as PopperInstance;
     }
 

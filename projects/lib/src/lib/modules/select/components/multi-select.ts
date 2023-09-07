@@ -65,7 +65,7 @@ export class SuiMultiSelect<T, U> extends SuiSelectBase<T, U> implements ICustom
     @Output()
     public selectedOptionsChange:EventEmitter<U[]>;
 
-    public get filteredOptions():T[] {
+    public override get filteredOptions():T[] {
         if (this.maxSelectedReached) {
             // If we have reached the maximum number of selections, then empty the results completely.
             return [];
@@ -82,11 +82,11 @@ export class SuiMultiSelect<T, U> extends SuiSelectBase<T, U> implements ICustom
         }
     }
 
-    public get availableOptions():T[] {
+    public override get availableOptions():T[] {
         return this.filteredOptions;
     }
 
-    private _hasLabels:boolean;
+    private _hasLabels!:boolean;
 
     @Input()
     public get hasLabels():boolean {
@@ -97,7 +97,7 @@ export class SuiMultiSelect<T, U> extends SuiSelectBase<T, U> implements ICustom
         this._hasLabels = hasLabels;
     }
 
-    private _placeholder:string;
+    private _placeholder!:string;
 
     @Input()
     public get placeholder():string {
@@ -109,7 +109,7 @@ export class SuiMultiSelect<T, U> extends SuiSelectBase<T, U> implements ICustom
     }
 
     @Input()
-    public maxSelected:number;
+    public maxSelected!:number;
 
     public get maxSelectedReached():boolean {
         if (this.maxSelected == undefined) {
@@ -132,7 +132,7 @@ export class SuiMultiSelect<T, U> extends SuiSelectBase<T, U> implements ICustom
     }
 
     @HostBinding("class.multiple")
-    public readonly hasClasses:boolean;
+    public override readonly hasClasses:boolean;
 
     constructor(element:ElementRef, localizationService:SuiLocalizationService) {
         super(element, localizationService);
@@ -144,7 +144,7 @@ export class SuiMultiSelect<T, U> extends SuiSelectBase<T, U> implements ICustom
         this.hasClasses = true;
     }
 
-    protected optionsUpdateHook():void {
+    protected override optionsUpdateHook():void {
         if (!this._writtenOptions && this.selectedOptions.length > 0) {
             // We need to check the options still exist.
             this.writeValue(this.selectedOptions.map(o => this.valueGetter(o)));
@@ -163,7 +163,7 @@ export class SuiMultiSelect<T, U> extends SuiSelectBase<T, U> implements ICustom
         }
     }
 
-    protected initialiseRenderedOption(option:SuiSelectOption<T>):void {
+    protected override initialiseRenderedOption(option:SuiSelectOption<T>):void {
         super.initialiseRenderedOption(option);
 
         // Boldens the item so it appears selected in the dropdown.
@@ -229,7 +229,7 @@ export class SuiMultiSelect<T, U> extends SuiSelectBase<T, U> implements ICustom
         }
     }
 
-    public onQueryInputKeydown(event:KeyboardEvent):void {
+    public override onQueryInputKeydown(event:KeyboardEvent):void {
         if (event.keyCode === KeyCode.Backspace && this.query === "" && this.selectedOptions.length > 0) {
             // Deselect the rightmost option when the user presses backspace in the search input.
             this.deselectOption(this.selectedOptions[this.selectedOptions.length - 1]);

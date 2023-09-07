@@ -57,7 +57,7 @@ export class SuiSearch<T> implements AfterViewInit {
     public searchService:SearchService<T, T>;
 
     @ViewChild(SuiDropdownMenu)
-    private _menu:SuiDropdownMenu;
+    private _menu!:SuiDropdownMenu;
 
     // Sets the Semantic UI classes on the host element.
     // Doing it on the host enables use in menus etc.
@@ -77,7 +77,7 @@ export class SuiSearch<T> implements AfterViewInit {
     @Input()
     public hasIcon:boolean;
 
-    private _placeholder:string;
+    private _placeholder!:string;
 
     // Gets & sets the placeholder text displayed inside the text input.
     @Input()
@@ -89,9 +89,9 @@ export class SuiSearch<T> implements AfterViewInit {
         this._placeholder = placeholder;
     }
 
-    private _localeValues:ISearchLocaleValues;
+    private _localeValues!:ISearchLocaleValues;
 
-    public localeOverrides:RecursivePartial<ISearchLocaleValues>;
+    public localeOverrides!:RecursivePartial<ISearchLocaleValues>;
 
     public get localeValues():ISearchLocaleValues {
         return this._localizationService.override<"search">(this._localeValues, this.localeOverrides);
@@ -151,7 +151,7 @@ export class SuiSearch<T> implements AfterViewInit {
     }
 
     @Input()
-    public resultTemplate:TemplateRef<IResultContext<T>>;
+    public resultTemplate!:TemplateRef<IResultContext<T>>;
 
     @Input()
     public retainSelectedResult:boolean;

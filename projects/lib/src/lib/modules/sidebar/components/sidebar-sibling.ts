@@ -11,7 +11,7 @@ import { SidebarService, SidebarTransition } from "../services/sidebar.service";
 `]
 })
 export class SuiSidebarSibling {
-    private _service:SidebarService;
+    private _service!:SidebarService;
 
     public get service():SidebarService {
         return this._service;

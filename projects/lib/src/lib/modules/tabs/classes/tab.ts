@@ -5,7 +5,7 @@ export class Tab {
     public id:string;
     public header:SuiTabHeader;
     public content:SuiTabContent;
-    public index:number;
+    public index!:number;
 
     constructor(header:SuiTabHeader, content:SuiTabContent) {
         this.id = header.id;

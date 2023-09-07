@@ -52,10 +52,10 @@ export class SuiPagination implements OnChanges {
 
     // Private members
     private _maxSize?:number;
-    private _collectionSize:number;
+    private _collectionSize!:number;
     private _page:number;
     private _pages:number[];
-    private _hasNavigationLinks:boolean;
+    private _hasNavigationLinks!:boolean;
 
     @Input()
     public get maxSize():number|undefined {

@@ -15,7 +15,7 @@ const isWebView = isUAWebView["default"] || isUAWebView;
     selector: "input[suiDatepicker]"
 })
 export class SuiDatepickerInputDirective {
-    private _useNativeOnMobile:boolean;
+    private _useNativeOnMobile!:boolean;
 
     @Input("pickerUseNativeOnMobile")
     public get useNativeOnMobile():boolean {
@@ -24,11 +24,11 @@ export class SuiDatepickerInputDirective {
 
     public set useNativeOnMobile(fallback:boolean) {
         this._useNativeOnMobile = fallback;
-        const isOnMobile = bowser.mobile || bowser.tablet || isWebView(navigator.userAgent);
+        const isOnMobile = (bowser as any).mobile || (bowser as any).tablet || isWebView(navigator.userAgent);
         this.fallbackActive = this.useNativeOnMobile && isOnMobile;
     }
 
-    private _fallbackActive:boolean;
+    private _fallbackActive!:boolean;
 
     public get fallbackActive():boolean {
         return this._fallbackActive;
@@ -50,12 +50,14 @@ export class SuiDatepickerInputDirective {
     }
 
     private _currentInputValue:string | undefined;
-    private _lastUpdateTyped:boolean;
+    private _lastUpdateTyped!:boolean;
 
     public get selectedDateString():string | undefined {
         if (this.datepicker.selectedDate) {
             return this.parser.format(this.datepicker.selectedDate);
         }
+
+        return undefined;
     }
 
     @HostBinding("attr.type")
@@ -75,6 +77,8 @@ export class SuiDatepickerInputDirective {
             const max = DateUtil.endOf(this.datepicker.config.precision, DateUtil.clone(this.datepicker.maxDate));
             return this.parser.format(max);
         }
+
+        return undefined;
     }
 
     @HostBinding("attr.min")
@@ -86,6 +90,8 @@ export class SuiDatepickerInputDirective {
             const min = DateUtil.clone(this.datepicker.minDate);
             return this.parser.format(min);
         }
+
+        return undefined;
     }
 
     constructor(@Host() public datepicker:SuiDatepickerDirective,

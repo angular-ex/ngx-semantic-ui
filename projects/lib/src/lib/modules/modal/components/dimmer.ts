@@ -16,7 +16,7 @@ export class SuiModalDimmer extends SuiDimmer {
 
     @HostBinding("class.page")
     @HostBinding("class.modals")
-    public readonly hasClasses:boolean;
+    public override readonly hasClasses:boolean;
 
     constructor(renderer:Renderer2, element:ElementRef, changeDetector:ChangeDetectorRef) {
         super(renderer, element, changeDetector);

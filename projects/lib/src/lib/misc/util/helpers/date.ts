@@ -12,6 +12,7 @@ export enum DatePrecision {
 export const DateUtil = {
     startOf(precision:DatePrecision, date:Date, resetAll:boolean = false):Date {
         switch (precision) {
+            // @ts-ignore
             case DatePrecision.Decade:
                 const start = Math.floor(date.getFullYear() / 10) * 10 + 1;
                 date.setFullYear(start);
@@ -19,24 +20,28 @@ export const DateUtil = {
                     break;
                 }
                 // falls through
+            // @ts-ignore
             case DatePrecision.Year:
                 date.setMonth(0);
                 if (!resetAll) {
                     break;
                 }
                 // falls through
+            // @ts-ignore
             case DatePrecision.Month:
                 date.setDate(1);
                 if (!resetAll) {
                     break;
                 }
                 // falls through
+            // @ts-ignore
             case DatePrecision.Date:
                 date.setHours(0);
                 if (!resetAll) {
                     break;
                 }
                 // falls through
+            // @ts-ignore
             case DatePrecision.Hour:
                 date.setMinutes(0);
                 if (!resetAll) {
@@ -52,9 +57,11 @@ export const DateUtil = {
 
     endOf(precision:DatePrecision, date:Date):Date {
         switch (precision) {
+            // @ts-ignore
             case DatePrecision.Year:
                 date.setMonth(12, 0);
                 // falls through
+            // @ts-ignore
             case DatePrecision.Month:
                 date.setMonth(date.getMonth() + 1, 0);
                 // falls through
@@ -75,15 +82,19 @@ export const DateUtil = {
     equal(precision:DatePrecision, a:Date, b:Date):boolean {
         let equal = true;
         switch (precision) {
+            // @ts-ignore
             case DatePrecision.Minute:
                 equal = equal && a.getMinutes() === b.getMinutes();
                 // falls through
+            // @ts-ignore
             case DatePrecision.Hour:
                 equal = equal && a.getHours() === b.getHours();
                 // falls through
+            // @ts-ignore
             case DatePrecision.Date:
                 equal = equal && a.getDate() === b.getDate();
                 // falls through
+            // @ts-ignore
             case DatePrecision.Month:
                 equal = equal && a.getMonth() === b.getMonth();
                 // falls through

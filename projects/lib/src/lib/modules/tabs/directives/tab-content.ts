@@ -8,7 +8,7 @@ export class SuiTabContent {
     public readonly hasClasses:boolean;
 
     @Input("suiTabContent")
-    public id:string;
+    public id!:any; // string
 
     @HostBinding("class.active")
     public isActive:boolean;

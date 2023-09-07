@@ -9,16 +9,16 @@ import { Tab } from "../classes/tab";
 })
 export class SuiTabset implements AfterContentInit {
     @ContentChildren(SuiTabHeader)
-    private _tabHeaders:QueryList<SuiTabHeader>;
+    private _tabHeaders!:QueryList<SuiTabHeader>;
 
     @ContentChildren(SuiTabContent)
-    private _tabContents:QueryList<SuiTabContent>;
+    private _tabContents!:QueryList<SuiTabContent>;
 
     // List of all tabs in the tabset.
     public tabs:Tab[];
 
     // Keeps track of the currently active tab.
-    private _activeTab:Tab;
+    private _activeTab!:Tab;
 
     public get activeTab():Tab {
         return this._activeTab;

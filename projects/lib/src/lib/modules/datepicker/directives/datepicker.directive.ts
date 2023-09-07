@@ -31,8 +31,8 @@ export class SuiDatepickerDirective
         this.onSelectedDateChange.emit(date);
     }
 
-    private _mode:DatepickerMode;
-    public config:CalendarConfig;
+    private _mode!:DatepickerMode;
+    public config!:CalendarConfig;
 
     @Input("pickerMode")
     public get mode():DatepickerMode {
@@ -74,10 +74,10 @@ export class SuiDatepickerDirective
     @Input("pickerFirstDayOfWeek")
     public firstDayOfWeek?:number;
 
-    private _localeValues:IDatepickerLocaleValues;
+    private _localeValues!:IDatepickerLocaleValues;
 
     @Input("pickerLocaleOverrides")
-    public localeOverrides:RecursivePartial<IDatepickerLocaleValues>;
+    public localeOverrides!:RecursivePartial<IDatepickerLocaleValues>;
 
     public get localeValues():IDatepickerLocaleValues {
         return this.localizationService.override<"datepicker">(this._localeValues, this.localeOverrides);

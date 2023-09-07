@@ -31,7 +31,7 @@ export class SuiPopupTemplateController<T> extends SuiPopupController {
         super(renderer, element, componentFactory, config);
     }
 
-    public configure(config?:ITemplatePopupConfig<T>):void {
+    public override configure(config?:ITemplatePopupConfig<T>):void {
         super.configure(config);
 
         if (config) {
@@ -40,7 +40,7 @@ export class SuiPopupTemplateController<T> extends SuiPopupController {
         }
     }
 
-    public open():void {
+    public override open():void {
         // If there is a template, inject it into the view.
         if (this.template) {
             this.popup.templateSibling.clear();

@@ -3,12 +3,12 @@ import { Directive, HostBinding, HostListener, Input, EventEmitter, ChangeDetect
 
 export class CalendarItem {
     public date:Date;
-    public humanReadable:string;
-    public isDisabled:boolean;
-    public isActive:boolean;
-    public isOutsideRange:boolean;
-    public isToday:boolean;
-    public isSelectable:boolean;
+    public humanReadable!:string;
+    public isDisabled!:boolean;
+    public isActive!:boolean;
+    public isOutsideRange!:boolean;
+    public isToday!:boolean;
+    public isSelectable!:boolean;
 
     constructor(date:Date) {
         this.date = date;
@@ -20,7 +20,7 @@ export class CalendarItem {
 })
 export class SuiCalendarItem {
     @Input("calendarItem")
-    public item:CalendarItem;
+    public item!:CalendarItem;
 
     @HostBinding("class.disabled")
     public get isSelectable():boolean {

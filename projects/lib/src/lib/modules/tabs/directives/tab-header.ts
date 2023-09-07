@@ -8,7 +8,7 @@ export class SuiTabHeader {
     public readonly hasClasses:boolean;
 
     @Input("suiTabHeader")
-    public id:string;
+    public id!:any; // string
 
     // Internally keeps track of whether the header is active.
     private _isActive:boolean;
@@ -49,7 +49,7 @@ export class SuiTabHeader {
         });
     }
 
-    private _isDisabled:boolean;
+    private _isDisabled!:boolean;
 
     @HostBinding("class.disabled")
     @Input()

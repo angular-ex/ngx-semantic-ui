@@ -7,7 +7,7 @@ import { TransitionController } from "../classes/transition-controller";
 })
 export class SuiTransition {
     // Each transition must have a controller associated that dispatches the transitions.
-    private _controller:TransitionController;
+    private _controller!:TransitionController;
 
     @Input()
     public set suiTransition(tC:TransitionController) {

@@ -18,7 +18,7 @@ export class SuiSelectOption<T> extends SuiDropdownMenuItem {
     public readonly hasClasses:boolean;
 
     @Input()
-    public value:T;
+    public value!:T;
 
     // Fires when the option is selected, whether by clicking or by keyboard.
     @Output()
@@ -41,7 +41,7 @@ export class SuiSelectOption<T> extends SuiDropdownMenuItem {
 
     // Placeholder to draw template beside.
     @ViewChild("templateSibling", { read: ViewContainerRef })
-    public templateSibling:ViewContainerRef;
+    public templateSibling!:ViewContainerRef;
 
     constructor(renderer:Renderer2, element:ElementRef, public changeDetector:ChangeDetectorRef) {
         // We inherit SuiDropdownMenuItem to automatically gain all keyboard navigation functionality.

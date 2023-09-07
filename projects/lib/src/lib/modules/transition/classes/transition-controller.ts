@@ -2,11 +2,11 @@ import { Renderer2, ElementRef, ChangeDetectorRef } from "@angular/core";
 import { Transition, TransitionDirection } from "./transition";
 
 export class TransitionController {
-    private _renderer:Renderer2;
+    private _renderer!:Renderer2;
 
-    private _element:ElementRef;
+    private _element!:ElementRef;
 
-    private _changeDetector:ChangeDetectorRef;
+    private _changeDetector!:ChangeDetectorRef;
 
     // Used to delay animations until we have an element to animate.
     private get _isReady():boolean {
@@ -50,7 +50,7 @@ export class TransitionController {
     }
 
     // Stores the setTimeout pointer for cancelling the animation callback.
-    private _animationTimeout:number;
+    private _animationTimeout!:number;
 
     constructor(isInitiallyVisible:boolean = true, display:string = "block") {
         // isInitiallyVisible sets whether the element starts out visible.

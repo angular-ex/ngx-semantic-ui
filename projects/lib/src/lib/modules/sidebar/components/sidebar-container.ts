@@ -13,16 +13,16 @@ import { SuiSidebarSibling } from "./sidebar-sibling";
 `]
 })
 export class SuiSidebarContainer implements AfterContentInit {
-    public service:SidebarService;
+    public service!:SidebarService;
 
     @HostBinding("class.pushable")
     public readonly hasClasses:boolean;
 
     @ContentChild(SuiSidebar)
-    public sidebar:SuiSidebar;
+    public sidebar!:SuiSidebar;
 
     @ContentChild(SuiSidebarSibling)
-    public sibling:SuiSidebarSibling;
+    public sibling!:SuiSidebarSibling;
 
     constructor() {
         this.hasClasses = true;

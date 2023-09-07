@@ -23,7 +23,7 @@ export class SuiDimmer extends SuiTransition {
     @HostBinding("class.dimmer")
     public readonly hasClasses:boolean;
 
-    private _transitionController:TransitionController;
+    private _transitionController!:TransitionController;
 
     private _isDimmed:boolean;
 
@@ -60,10 +60,10 @@ export class SuiDimmer extends SuiTransition {
     public isClickable:boolean;
 
     @Input()
-    public transition:string;
+    public transition!:string;
 
     @Input()
-    public transitionDuration:number;
+    public transitionDuration!:number;
 
     /* Internal for now */
     @Input()

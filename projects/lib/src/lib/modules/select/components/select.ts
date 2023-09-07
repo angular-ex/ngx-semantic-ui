@@ -41,12 +41,12 @@ export class SuiSelect<T, U> extends SuiSelectBase<T, U> implements ICustomValue
     private _writtenOption?:U;
 
     @ViewChild("optionTemplateSibling", { read: ViewContainerRef })
-    private _optionTemplateSibling:ViewContainerRef;
+    private _optionTemplateSibling!:ViewContainerRef;
 
     @Output()
     public selectedOptionChange:EventEmitter<U>;
 
-    private _placeholder:string;
+    private _placeholder!:string;
 
     @Input()
     public get placeholder():string {
@@ -63,7 +63,7 @@ export class SuiSelect<T, U> extends SuiSelectBase<T, U> implements ICustomValue
         this.selectedOptionChange = new EventEmitter<U>();
     }
 
-    protected optionsUpdateHook():void {
+    protected override optionsUpdateHook():void {
         if (!this._writtenOption && this.selectedOption) {
             // We need to check the option still exists.
             this.writeValue(this.valueGetter(this.selectedOption));
@@ -79,7 +79,7 @@ export class SuiSelect<T, U> extends SuiSelectBase<T, U> implements ICustomValue
         }
     }
 
-    protected queryUpdateHook():void {
+    protected override queryUpdateHook():void {
         // When the query is updated, we just abandon the current selection.
         this.selectedOption = undefined;
     }
@@ -127,7 +127,7 @@ export class SuiSelect<T, U> extends SuiSelectBase<T, U> implements ICustomValue
         }
     }
 
-    protected initialiseRenderedOption(option:SuiSelectOption<T>):void {
+    protected override initialiseRenderedOption(option:SuiSelectOption<T>):void {
         super.initialiseRenderedOption(option);
 
         // Boldens the item so it appears selected in the dropdown.

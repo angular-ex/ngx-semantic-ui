@@ -25,9 +25,9 @@ export type ApiDefinition = IApi[];
 @Component({
     selector: "demo-api",
     templateUrl: "./api.component.html",
-    styleUrls: ["./api.component.css"]
+    styleUrls: ["./api.component.scss"]
 })
 export class ApiComponent {
     @Input()
-    public api:ApiDefinition;
+    public api!:ApiDefinition;
 }

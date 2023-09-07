@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { SuiModal, ComponentModalConfig, ModalSize } from "ng2-semantic-ui";
+import { SuiModal, ComponentModalConfig, ModalSize } from "ngx-semantic-ui";
 
 interface IAlertModalContext {
     message:string;

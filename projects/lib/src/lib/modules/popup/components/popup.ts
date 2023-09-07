@@ -60,16 +60,16 @@ import { TemplatePopupConfig } from "../classes/popup-template-controller";
 })
 export class SuiPopup implements IPopup {
     // Config settings for this popup.
-    public config:TemplatePopupConfig<any>;
+    public config!:TemplatePopupConfig<any>;
 
     public transitionController:TransitionController;
-    public positioningService:PositioningService;
-    private _anchor:ElementRef;
+    public positioningService!:PositioningService;
+    private _anchor!:ElementRef;
 
     // Keeps track of whether the popup is open internally.
     private _isOpen:boolean;
     // `setTimeout` timer pointer for cancelling popup close.
-    public closingTimeout:number;
+    public closingTimeout!:number;
 
     // Fires when the popup opens (and the animation is completed).
     public onOpen:EventEmitter<void>;
@@ -82,7 +82,7 @@ export class SuiPopup implements IPopup {
 
     // `ElementRef` for the positioning subject.
     @ViewChild("container", { read: ViewContainerRef })
-    private _container:ViewContainerRef;
+    private _container!:ViewContainerRef;
 
     public set anchor(anchor:ElementRef) {
         this._anchor = anchor;
@@ -108,13 +108,13 @@ export class SuiPopup implements IPopup {
             classes[this.alignment] = true;
         }
         if (this.config.isInverted) {
-            classes.inverted = true;
+            classes['inverted'] = true;
         }
         if (this.config.isBasic) {
-            classes.basic = true;
+            classes['basic'] = true;
         }
         if (this.config.isFlowing) {
-            classes.flowing = true;
+            classes['flowing'] = true;
         }
         if (this.config.size) {
             classes[this.config.size] = true;
@@ -127,7 +127,7 @@ export class SuiPopup implements IPopup {
 
     // `ViewContainerRef` for the element the template gets injected as a sibling of.
     @ViewChild("templateSibling", { read: ViewContainerRef })
-    public templateSibling:ViewContainerRef;
+    public templateSibling!:ViewContainerRef;
 
     @HostBinding("attr.tabindex")
     public readonly tabindex:number;

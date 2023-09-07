@@ -30,15 +30,15 @@ export class SuiRadio<T> implements ICustomValueAccessorHost<T> {
     public readonly hasClasses:boolean;
 
     @Input()
-    public name:string;
+    public name!:string;
 
     @Input()
-    public value:T;
+    public value!:T;
 
     @HostBinding("class.checked")
     public isChecked:boolean;
 
-    public currentValue:T;
+    public currentValue!:T;
 
     @Output("currentValueChange")
     public onCurrentValueChange:EventEmitter<T>;
@@ -54,7 +54,7 @@ export class SuiRadio<T> implements ICustomValueAccessorHost<T> {
     public isReadonly:boolean;
 
     @ViewChild("radio")
-    private _radioElement:ElementRef;
+    private _radioElement!:ElementRef;
 
     public get checkedAttribute():string | undefined {
         return this.isChecked ? "" : undefined;

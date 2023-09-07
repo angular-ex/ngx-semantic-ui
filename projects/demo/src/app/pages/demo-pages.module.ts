@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import { SuiModule } from "ng2-semantic-ui";
+import { SuiModule } from "ngx-semantic-ui";
 import { DemoComponentsModule } from "../components/demo-components.module";
 
 import { GettingStartedPage } from "./getting-started/getting-started.page";
@@ -45,9 +45,11 @@ import { TestPage } from "./development/test/test.page";
     ],
     declarations: [
         GettingStartedPage,
+
         // Collections
         MessagePageComponents,
         PaginationPageComponents,
+
         // Modules
         AccordionPageComponents,
         CheckboxPageComponents,
@@ -64,11 +66,13 @@ import { TestPage } from "./development/test/test.page";
         SidebarPageComponents,
         TabsPageComponents,
         TransitionPageComponents,
+
         // Behaviors
         LocalizationPageComponents,
+
         // Development
         TestPage
     ],
-    exports: []
+    exports: [],
 })
 export class DemoPagesModule {}

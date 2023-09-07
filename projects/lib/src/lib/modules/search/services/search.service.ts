@@ -51,23 +51,23 @@ export class SearchService<T, U> {
     }
 
     // Stores the results of the query.
-    private _results:T[];
+    private _results!:T[];
     // Cache of results, indexed by query.
-    private _resultsCache:ICachedArray<T>;
+    private _resultsCache!:ICachedArray<T>;
 
     public get results():T[] {
         return this._results;
     }
 
-    private _query:string;
+    private _query!:string;
     // Allows the empty query to produce results.
     public allowEmptyQuery:boolean;
     // How long to delay the search for when using updateQueryDelayed. Stored in ms.
     public searchDelay:number;
     // Stores the search timeout handle so we can cancel it.
-    private _searchDelayTimeout:number;
+    private _searchDelayTimeout!:number;
     // Provides 'loading' functionality.
-    private _isSearching:boolean;
+    private _isSearching!:boolean;
 
     public get query():string {
         return this._query;
@@ -175,7 +175,7 @@ export class SearchService<T, U> {
     // tslint:disable-next-line:promise-function-async
     public initialLookup(initial:U | U[]):LookupFnResult<T> | LookupFnResult<T[]> {
         if (initial instanceof Array) {
-            return (this._optionsLookup as unknown as LookupFn<T, U[]>)(undefined, initial) as LookupFnResult<T[]>;
+            return (this._optionsLookup as LookupFn<T, U[]>)(undefined, initial) as LookupFnResult<T[]>;
         }
         return (this._optionsLookup as LookupFn<T, U>)(undefined, initial) as LookupFnResult<T>;
     }

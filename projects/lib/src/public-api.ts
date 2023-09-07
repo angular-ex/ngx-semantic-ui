@@ -1,6 +1,10 @@
-export * from "./behaviors/public";
-export * from "./collections/public";
-export * from "./modules/public";
+/*
+ * Public API Surface of lib
+ */
 
-export * from "./misc/public";
-export { SuiModule } from "./index";
+export * from "./lib/behaviors/public";
+export * from "./lib/collections/public";
+export * from "./lib/modules/public";
+
+export * from "./lib/misc/public";
+export { SuiModule } from "./lib/index";

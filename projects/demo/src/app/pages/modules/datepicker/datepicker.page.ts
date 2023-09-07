@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ApiDefinition } from "../../../components/api/api.component";
-import { DatepickerMode } from "ng2-semantic-ui";
+import { DatepickerMode } from "ngx-semantic-ui";
 
 const exampleStandardTemplate = `
 <div class="ui form">
@@ -189,7 +189,7 @@ export class DatepickerExampleStandard {
 
     public datepickerModes:string[] = ["datetime", "date", "time", "month", "year"];
     public mode:DatepickerMode = DatepickerMode.Datetime;
-    public date:Date;
+    public date!:Date;
 }
 
 @Component({
@@ -219,7 +219,7 @@ export class DatepickerExampleMinMax {
     template: exampleMobileFallbackTemplate
 })
 export class DatepickerExampleMobileFallback {
-    public date:Date = new Date();
+    public date?:Date = new Date();
 
     public unset():void {
         this.date = undefined;

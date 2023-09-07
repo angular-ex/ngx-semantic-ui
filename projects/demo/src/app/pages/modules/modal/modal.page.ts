@@ -3,7 +3,7 @@ import { ApiDefinition } from "../../../components/api/api.component";
 import {
     SuiModalService, ModalTemplate, TemplateModalConfig, ComponentModalConfig,
     ModalSize, SuiModal
-} from "ng2-semantic-ui";
+} from "ngx-semantic-ui";
 import { AlertModal } from "../../../modals/alert.modal";
 
 const exampleTemplateModalTemplate = `
@@ -160,7 +160,7 @@ export class ModalPage {
     public templateTemplate:string = exampleTemplateModalTemplate;
 
     public templateComponent:string = `
-import {SuiModalService, TemplateModalConfig, ModalTemplate} from 'ng2-semantic-ui';
+import {SuiModalService, TemplateModalConfig, ModalTemplate} from 'ngx-semantic-ui';
 
 export interface IContext {
     data:string;
@@ -190,7 +190,7 @@ public open(dynamicContent:string = "Example") {
 `;
 
     public componentComponent:string = `
-import {SuiModal, ComponentModalConfig, ModalSize} from "ng2-semantic-ui"
+import {SuiModal, ComponentModalConfig, ModalSize} from "ngx-semantic-ui"
 
 interface IConfirmModalContext {
     title:string;
@@ -233,7 +233,7 @@ this.modalService
 })
 export class ModalExampleTemplate {
     @ViewChild("modalTemplate")
-    public modalTemplate:ModalTemplate<{ data:string }, string, string>;
+    public modalTemplate!:ModalTemplate<{ data:string }, string, string>;
 
     public dynamicContent:string = "Example of dynamic content.";
 
@@ -247,8 +247,8 @@ export class ModalExampleTemplate {
 
         this.modalService
             .open(config)
-            .onApprove(r => this.alert(`Accepted with result: '${r}'.`))
-            .onDeny(r => this.alert(`Denied with result: '${r}'.`));
+            .onApprove((r: any) => this.alert(`Accepted with result: '${r}'.`))
+            .onDeny((r: any) => this.alert(`Denied with result: '${r}'.`));
     }
 
     public alert(message:string):void {

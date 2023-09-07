@@ -38,11 +38,11 @@ export class CalendarRange {
 }
 
 export abstract class CalendarRangeService {
-    public previous:CalendarRange;
-    public current:CalendarRange;
-    public next:CalendarRange;
+    public previous!:CalendarRange;
+    public current!:CalendarRange;
+    public next!:CalendarRange;
 
-    public service:CalendarService;
+    public service!:CalendarService;
 
     public interval:DatePrecision;
     public marginal:DatePrecision;

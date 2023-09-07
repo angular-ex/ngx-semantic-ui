@@ -20,8 +20,8 @@ export interface IAugmentedElement extends Element {
     closest(selector:string):IAugmentedElement;
 }
 
-export class HandledEvent {
-    public eventHandled:boolean;
+export class HandledEvent extends MouseEvent {
+    public eventHandled?:boolean;
 }
 
 export interface IDynamicClasses {
@@ -44,8 +44,8 @@ export const Util = {
         },
         groupBy<T>(items:T[], field:keyof T):{ [name:string]:T[] } {
             return items.reduce<{ [name:string]:T[] }>(
-                (groups, i) => {
-                    const fieldValue = (i[field] as any).toString();
+                (groups, i: T) => {
+                    const fieldValue = (i as any)[field].toString();
                     groups[fieldValue] = groups[fieldValue] || [];
                     groups[fieldValue].push(i);
                     return groups;

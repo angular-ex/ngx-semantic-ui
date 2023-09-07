@@ -7,11 +7,11 @@ import { CalendarRangeService } from "../services/calendar-range.service";
 import { DateParser } from "../classes/date-parser";
 
 export class CalendarRangeMinuteService extends CalendarRangeService {
-    public calcStart(start:Date):Date {
+    public override calcStart(start:Date):Date {
         return DateUtil.startOf(DatePrecision.Hour, DateUtil.clone(start), true);
     }
 
-    public calcDates(start:Date):Date[] {
+    public override calcDates(start:Date):Date[] {
         return Util.Array
             .range(this.length)
             .map(i => DateUtil.add(DatePrecision.Minute, DateUtil.clone(start), i * 5));

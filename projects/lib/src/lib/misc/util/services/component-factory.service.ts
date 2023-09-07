@@ -1,6 +1,6 @@
 import {
     Injectable, ApplicationRef, ComponentFactoryResolver, Injector, ComponentRef,
-    ReflectiveInjector, Provider, Type, ViewContainerRef, TemplateRef
+    Provider, Type, ViewContainerRef, TemplateRef
 } from "@angular/core";
 
 export interface IImplicitContext<T> {
@@ -18,10 +18,10 @@ export class SuiComponentFactory {
         const factory = this._componentFactoryResolver.resolveComponentFactory(type as Type<T>);
 
         // Resolve and create an injector with the specified providers.
-        const injector = ReflectiveInjector.resolveAndCreate(
-            providers,
-            this._injector
-        );
+        const injector = Injector.create({
+            providers: providers,
+            parent: this._injector
+        });
 
         // Create a component using the previously resolved factory & injector.
         const componentRef = factory.create(injector);

@@ -3,10 +3,10 @@ import { CalendarViewType } from "../views/calendar-view";
 export type CalendarMapping<T = CalendarViewType> = Map<CalendarViewType, T>;
 
 export abstract class CalendarMappings {
-    public initialView:CalendarViewType;
-    public finalView:CalendarViewType;
-    public changed:CalendarMapping;
-    public zoom:CalendarMapping;
+    public initialView!:CalendarViewType;
+    public finalView!:CalendarViewType;
+    public changed!:CalendarMapping;
+    public zoom!:CalendarMapping;
 }
 
 export class DateMappings extends CalendarMappings {

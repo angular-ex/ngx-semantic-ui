@@ -25,7 +25,7 @@ import { CalendarRangeService } from "../services/calendar-range.service";
 export class SuiCalendarViewTitle {
 
     @Input()
-    public ranges:CalendarRangeService;
+    public ranges!:CalendarRangeService;
 
     @Output("zoomOut")
     public onZoomOut:EventEmitter<void>;

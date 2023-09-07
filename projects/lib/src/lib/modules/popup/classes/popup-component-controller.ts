@@ -11,6 +11,8 @@ export class SuiPopupComponentController<T> extends SuiPopupController {
         if (this._contentComponentRef) {
             return this._contentComponentRef.instance;
         }
+
+        return undefined;
     }
 
     constructor(renderer:Renderer2,
@@ -22,7 +24,7 @@ export class SuiPopupComponentController<T> extends SuiPopupController {
         super(renderer, element, componentFactory, config);
     }
 
-    public open():void {
+    public override open():void {
         if (!this._contentComponentRef) {
             this._contentComponentRef = this._componentFactory.createComponent(this._component as Type<T>);
             this._componentFactory.attachToView(this._contentComponentRef, this.popup.templateSibling);
@@ -31,7 +33,7 @@ export class SuiPopupComponentController<T> extends SuiPopupController {
         super.open();
     }
 
-    protected cleanup():void {
+    protected override cleanup():void {
         super.cleanup();
 
         if (this._contentComponentRef) {

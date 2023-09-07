@@ -1,6 +1,6 @@
 import { Component, OnDestroy } from "@angular/core";
-import { SuiLocalizationService } from "ng2-semantic-ui";
-import locales from "ng2-semantic-ui/locales";
+import { SuiLocalizationService } from "ngx-semantic-ui";
+import locales from "ngx-semantic-ui/locales";
 
 const exampleTemplate = `
 <div class="ui segments">
@@ -104,9 +104,9 @@ const supportedLanguages:ISupportedLanguage[] = [
 })
 export class LocalizationPage {
     public localizationCode:string = `
-import {SuiLocalizationService} from "ng2-semantic-ui";
+import {SuiLocalizationService} from "ngx-semantic-ui";
 // We'll use Spanish for this example.
-import es from "ng2-semantic-ui/locales/es";
+import es from "ngx-semantic-ui/locales/es";
 
 @Component({
     selector: "app-root",
@@ -123,9 +123,9 @@ export class AppComponent {
 `;
 
     public customizationCode:string = `
-import {SuiLocalizationService} from "ng2-semantic-ui";
+import {SuiLocalizationService} from "ngx-semantic-ui";
 // This example uses French.
-import fr from "ng2-semantic-ui/locales/fr";
+import fr from "ngx-semantic-ui/locales/fr";
 
 @Component({
     selector: "app-root",
@@ -227,7 +227,7 @@ export class LocalizationExample implements OnDestroy {
 
         this.localizationService.setLanguage("en-GB");
 
-        Object.keys(locales).forEach(k => this.localizationService.load(k, locales[k]));
+        Object.keys(locales).forEach((k: string) => this.localizationService.load(k, (locales as any)[k]));
     }
 
     public ngOnDestroy():void {

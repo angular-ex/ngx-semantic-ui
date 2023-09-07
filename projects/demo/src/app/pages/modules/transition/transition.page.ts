@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { SuiTransition, Transition, TransitionDirection, TransitionController } from "ng2-semantic-ui";
+import { SuiTransition, Transition, TransitionDirection, TransitionController } from "ngx-semantic-ui";
 import { ApiDefinition } from "../../../components/api/api.component";
 
 const exampleStandardTemplate = `
@@ -32,7 +32,7 @@ export class TransitionPage {
     ];
 
     public transitionControllerCode:string = `
-import {TransitionController} from "ng2-semantic-ui";
+import {TransitionController} from "ngx-semantic-ui";
 
 @Component({})
 export class MyComponent {
@@ -47,7 +47,7 @@ export class MyComponent {
 `;
 
     public transitionExampleCode:string = `
-import {TransitionController, Transition, TransitionDirection} from "ng2-semantic-ui";
+import {TransitionController, Transition, TransitionDirection} from "ngx-semantic-ui";
 
 @Component({})
 export class MyComponent {
@@ -90,7 +90,7 @@ this.ctrl.clearQueue();
 `;
 
     public advancedExampleCode:string = `
-import {SuiTransition, TransitionController, Transition} from "ng2-semantic-ui";
+import {SuiTransition, TransitionController, Transition} from "ngx-semantic-ui";
 
 @Component({})
 export class MyComponent extends SuiTransition {

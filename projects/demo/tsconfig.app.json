@@ -1,0 +1,19 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../out-tsc/app",
+    "types": [],
+    "paths": {
+      "ngx-semantic-ui": ["dist/lib"],
+      "ngx-semantic-ui/locales": ["dist/lib/locales"],
+      "ngx-semantic-ui/*": ["dist/lib/*"]
+    },
+  },
+  "files": [
+    "src/main.ts"
+  ],
+  "include": [
+    "src/**/*.d.ts"
+  ]
+}

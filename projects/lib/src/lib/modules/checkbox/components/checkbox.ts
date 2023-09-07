@@ -26,7 +26,7 @@ export class SuiCheckbox implements ICustomValueAccessorHost<boolean> {
     public readonly hasClasses:boolean;
 
     @Input()
-    public name:string;
+    public name!:string;
 
     @HostBinding("class.checked")
     public isChecked:boolean;
@@ -53,7 +53,7 @@ export class SuiCheckbox implements ICustomValueAccessorHost<boolean> {
     }
 
     @ViewChild("checkbox")
-    private _checkboxElement:ElementRef;
+    private _checkboxElement!:ElementRef;
 
     constructor() {
         this.isChecked = false;

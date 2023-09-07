@@ -24,7 +24,7 @@ import { SuiPopupConfig } from "./services/popup.service";
     ],
     providers: [
         SuiPopupConfig
-    ]
+    ],
 })
 
 export class SuiPopupModule {}

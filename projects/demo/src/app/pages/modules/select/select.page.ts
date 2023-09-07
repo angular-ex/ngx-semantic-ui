@@ -1,5 +1,6 @@
 import { Component } from "@angular/core";
 import { ApiDefinition } from "../../../components/api/api.component";
+import { LookupFn } from "ngx-semantic-ui";
 
 const exampleStandardTemplate = `
 <div class="ui segments">
@@ -451,8 +452,8 @@ const idOptions:IOption[] = namedOptions.map(({ name }, id) => ({ name, id }));
 })
 export class SelectExampleStandard {
     public options:IOption[] = namedOptions;
-    public selectedOption:IOption;
-    public selectedOptions:IOption[];
+    public selectedOption!:IOption;
+    public selectedOptions!:IOption[];
 
     public searchable:boolean = false;
     public disabled:boolean = false;
@@ -496,19 +497,19 @@ export class SelectExampleTemplate {
 })
 export class SelectExampleLookupSearch {
     private _options:IOption[] = idOptions;
-    public selectedOption:number = this._options[3]["id"];
+    public selectedOption:number = this._options[3]["id"] || 1;
 
-    public optionsLookup = async (query:string, initial:number) => {
+    public optionsLookup: any = async (query:string|undefined, initial:number) => {
         if (initial != undefined) {
-            return new Promise<IOption>(resolve =>
+            return new Promise<IOption | undefined>(resolve =>
                 setTimeout(() => resolve(this._options.find(item => item.id === initial)), 500));
         }
 
         let regex:RegExp | string;
         try {
-            regex = new RegExp(query, "i");
+            regex = new RegExp(query || '', "i");
         } catch (e) {
-            regex = query;
+            regex = query || '';
         }
         return new Promise<IOption[]>(resolve =>
             setTimeout(() => resolve(this._options.filter(item => item.name.match(regex))), 500));

@@ -25,10 +25,10 @@ export class SidebarService {
     public isAnimating:boolean;
     public wasJustOpened:boolean;
 
-    public direction:SidebarDirection;
+    public direction!:SidebarDirection;
 
-    private _width:number;
-    private _height:number;
+    private _width!:number;
+    private _height!:number;
 
     public get width():number {
         if (this.direction === SidebarDirection.Left) {
@@ -64,7 +64,7 @@ export class SidebarService {
     public widthChange:EventEmitter<void>;
     public heightChange:EventEmitter<void>;
 
-    private _isAnimatingTimeout:number;
+    private _isAnimatingTimeout!:number;
 
     public transition:SidebarTransition;
 

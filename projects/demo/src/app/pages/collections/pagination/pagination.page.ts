@@ -157,9 +157,9 @@ export class PaginationPage {
 })
 export class PaginationExampleStandard implements OnInit {
 
-    public selectedPage:number;
-    public navigation:boolean;
-    public boundary:boolean;
+    public selectedPage!:number;
+    public navigation!:boolean;
+    public boundary!:boolean;
 
     constructor() { }
 
@@ -176,9 +176,9 @@ export class PaginationExampleStandard implements OnInit {
 })
 export class PaginationExampleMaxSize implements OnInit {
 
-    public selectedPage:number;
-    public ellipses:boolean;
-    public maxSize:number;
+    public selectedPage!:number;
+    public ellipses!:boolean;
+    public maxSize!:number;
 
     constructor() { }
 
@@ -195,9 +195,9 @@ export class PaginationExampleMaxSize implements OnInit {
 })
 export class PaginationExampleRotation implements OnInit {
 
-    public selectedPage:number;
-    public ellipses:boolean;
-    public maxSize:number;
+    public selectedPage!:number;
+    public ellipses!:boolean;
+    public maxSize!:number;
 
     constructor() { }
 

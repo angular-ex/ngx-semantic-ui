@@ -11,10 +11,10 @@ export class SuiRadioManager<T> implements AfterContentInit {
     public isNested:boolean;
 
     @ContentChildren(SuiRadioManager, { descendants: true })
-    private _subManagers:QueryList<SuiRadioManager<T>>;
+    private _subManagers!:QueryList<SuiRadioManager<T>>;
 
     @ContentChildren(SuiRadio, { descendants: true })
-    private _renderedRadios:QueryList<SuiRadio<T>>;
+    private _renderedRadios!:QueryList<SuiRadio<T>>;
 
     private _radioSubs:Subscription[];
 

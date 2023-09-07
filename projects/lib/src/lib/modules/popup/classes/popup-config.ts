@@ -37,8 +37,8 @@ export class PopupConfig implements IPopupConfig {
     public delay:number;
     public isBasic:boolean;
     public transition:string;
-    public size:PopupSize;
-    public width:PopupWidth;
+    public size!:PopupSize;
+    public width!:PopupWidth;
     public transitionDuration:number;
     public isFlowing:boolean;
     public isInline:boolean;

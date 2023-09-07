@@ -43,11 +43,11 @@ import { ModalConfig, ModalSize } from "../classes/modal-config";
 export class SuiModal<T, U> implements OnInit, AfterViewInit {
     @Input()
     // Determines whether the modal can be closed with a close button, clicking outside, or the escape key.
-    public isClosable:boolean;
+    public isClosable!:boolean;
 
     @Input()
     // Value to deny with when closing via `isClosable`.
-    public closeResult:U;
+    public closeResult!:U;
 
     // Separate class for the `approve` and `deny` methods to support passing into components.
     public controls:ModalControls<T, U>;
@@ -73,17 +73,17 @@ export class SuiModal<T, U> implements OnInit, AfterViewInit {
     public onDismiss:EventEmitter<void>;
 
     @ViewChild("modal", { static: true })
-    private _modalElement:ElementRef;
+    private _modalElement!:ElementRef;
 
     // Size used to display the modal.
     @Input()
-    public size:ModalSize;
+    public size!:ModalSize;
 
     @Input()
-    public isCentered:boolean;
+    public isCentered!:boolean;
 
     // Whether the modal takes up the full width of the screen.
-    private _isFullScreen:boolean;
+    private _isFullScreen!:boolean;
 
     // Value to deny with when closing via `isClosable`.
     @Input()
@@ -97,12 +97,12 @@ export class SuiModal<T, U> implements OnInit, AfterViewInit {
 
     // Whether or not the modal has basic styles applied.
     @Input()
-    public isBasic:boolean;
+    public isBasic!:boolean;
 
     // Whether the modal currently is displaying a scrollbar.
-    private _mustScroll:boolean;
+    private _mustScroll!:boolean;
     // Whether or not the modal should always display a scrollbar.
-    private _mustAlwaysScroll:boolean;
+    private _mustAlwaysScroll!:boolean;
 
     @Input()
     public get mustScroll():boolean {
@@ -117,7 +117,7 @@ export class SuiModal<T, U> implements OnInit, AfterViewInit {
     }
 
     // Whether the modal shows against a light background.
-    private _isInverted:boolean;
+    private _isInverted!:boolean;
 
     @Input()
     public get isInverted():boolean {
@@ -132,11 +132,11 @@ export class SuiModal<T, U> implements OnInit, AfterViewInit {
 
     // Transition to display modal with.
     @Input()
-    public transition:string;
+    public transition!:string;
 
     // Duration of the modal & dimmer transitions.
     @Input()
-    public transitionDuration:number;
+    public transitionDuration!:number;
 
     // Whether or not the backround dimmer is active.
     public dimBackground:boolean;
@@ -145,7 +145,7 @@ export class SuiModal<T, U> implements OnInit, AfterViewInit {
 
     // `ViewContainerRef` for the element the template gets injected as a sibling of.
     @ViewChild("templateSibling", { read: ViewContainerRef, static: true })
-    public templateSibling:ViewContainerRef;
+    public templateSibling!:ViewContainerRef;
 
     // Parent element of modal before relocation to document body.
     private _originalContainer?:Element;

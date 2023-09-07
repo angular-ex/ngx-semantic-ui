@@ -1,12 +1,13 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { SuiModalModule } from "ng2-semantic-ui";
+import { SuiModalModule } from "ngx-semantic-ui";
 import { AlertModalComponent } from "./alert.modal";
 import { ConfirmModalComponent } from "./confirm.modal";
 
 @NgModule({
     imports: [
         CommonModule,
+
         SuiModalModule
     ],
     declarations: [
@@ -16,6 +17,6 @@ import { ConfirmModalComponent } from "./confirm.modal";
     exports: [
         AlertModalComponent,
         ConfirmModalComponent
-    ]
+    ],
 })
 export class DemoModalsModule {}

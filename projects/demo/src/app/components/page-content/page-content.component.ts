@@ -5,7 +5,7 @@ import { Component, HostBinding } from "@angular/core";
     template: `
 <ng-content></ng-content>
 `,
-    styleUrls: ["./page-content.component.css"]
+    styleUrls: ["./page-content.component.scss"]
 })
 export class PageContentComponent {
     @HostBinding("class.ui")

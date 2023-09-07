@@ -178,8 +178,8 @@ export class CheckboxPage {
 })
 export class CheckboxExampleStandard {
     public eCheck:boolean = true;
-    public eCheckReadonly:boolean;
-    public eCheckDisabled:boolean;
+    public eCheckReadonly!:boolean;
+    public eCheckDisabled!:boolean;
 }
 
 @Component({

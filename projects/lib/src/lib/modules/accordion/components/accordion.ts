@@ -46,7 +46,7 @@ export class SuiAccordion implements AfterContentInit {
     protected _service:SuiAccordionService;
 
     @ContentChildren(SuiAccordionPanel)
-    protected _panels:QueryList<SuiAccordionPanel>;
+    protected _panels!:QueryList<SuiAccordionPanel>;
 
     constructor() {
         // Accordion service is unique to each set of panels.

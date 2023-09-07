@@ -6,7 +6,7 @@ import { CalendarRangeService } from "../services/calendar-range.service";
 import { DateParser } from "../classes/date-parser";
 
 export class CalendarRangeDateService extends CalendarRangeService {
-    public calcStart(start:Date):Date {
+    public override calcStart(start:Date):Date {
         const monthStart = DateUtil.startOf(DatePrecision.Month, DateUtil.clone(start));
         monthStart.setDate((1 - monthStart.getDay() + this.service.firstDayOfWeek - 7) % 7);
         return monthStart;

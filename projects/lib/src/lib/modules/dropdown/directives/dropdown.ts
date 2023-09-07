@@ -13,10 +13,10 @@ export class SuiDropdown implements AfterContentInit {
     public service:DropdownService;
 
     @ContentChild(SuiDropdownMenu)
-    private _menu:SuiDropdownMenu;
+    private _menu!:SuiDropdownMenu;
 
     @ContentChildren(SuiDropdown, { descendants: true })
-    private _children:QueryList<SuiDropdown>;
+    private _children!:QueryList<SuiDropdown>;
 
     public get children():SuiDropdown[] {
         // @ContentChildren includes the current element by default.

@@ -77,7 +77,7 @@ export class TimeConfig extends CalendarConfig {
             "time");
     }
 
-    public updateBounds(providedDate:Date):void {
+    public override updateBounds(providedDate:Date):void {
         this.dateMaxBound = DateUtil.endOf(DatePrecision.Date, DateUtil.clone(providedDate));
         this.dateMinBound = DateUtil.previous(DatePrecision.Date, DateUtil.clone(this.dateMaxBound));
     }

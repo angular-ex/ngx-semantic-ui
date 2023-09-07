@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ApiDefinition } from "../../../components/api/api.component";
-import { SuiModalService } from "ng2-semantic-ui";
+import { SuiModalService } from "ngx-semantic-ui";
 import { AlertModal } from "../../../modals/alert.modal";
 
 const exampleStandardTemplate = `
@@ -164,10 +164,10 @@ export class TabExampleStandard {}
 })
 export class TabExampleProperties {
     public firstActive:boolean;
-    public secondActive:boolean;
-    public thirdActive:boolean;
+    public secondActive!:boolean;
+    public thirdActive!:boolean;
 
-    public thirdDisabled:boolean;
+    public thirdDisabled!:boolean;
 
     constructor(public modalService:SuiModalService) {
         this.firstActive = true;

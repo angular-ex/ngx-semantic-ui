@@ -28,7 +28,7 @@ export class SuiRating implements ICustomValueAccessorHost<number> {
     @Output()
     public valueChange:EventEmitter<number>;
 
-    private _maximum:number;
+    private _maximum!:number;
 
     @Input()
     public get maximum():number {
