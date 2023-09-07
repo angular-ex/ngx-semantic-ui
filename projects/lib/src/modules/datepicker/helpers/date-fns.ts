@@ -33,23 +33,23 @@ function buildLocalizeFn(values:IDateFnsLocaleValues,
                          defaultType:string,
                          indexCallback?:(oldIndex:number) => number):DateFnsHelper<number, string> {
 
-    return (dirtyIndex:number, { type } = { type: defaultType }) => {
+    return (dirtyIndex:number, { type }:any = { type: defaultType }) => {
         const index = indexCallback ? indexCallback(dirtyIndex) : dirtyIndex;
         return values[type][index];
     };
 }
 
 function buildLocalizeArrayFn(values:IDateFnsLocaleValues, defaultType:string):DateFnsHelper<IDateFnsHelperOptions, string[]> {
-    return ({ type } = { type: defaultType }) => values[type];
+    return ({ type }:any = { type: defaultType }) => values[type];
 }
 
 function buildMatchFn(patterns:IDateFnsLocaleValues, defaultType:string):DateFnsHelper<string, RegExpMatchArray | null> {
-    return (dirtyString, { type } = { type: defaultType }) =>
+    return (dirtyString, { type }:any = { type: defaultType }) =>
         dirtyString.match(`^(${patterns[type].join("|")})`);
 }
 
 function buildParseFn(patterns:IDateFnsLocaleValues, defaultType:string):DateFnsHelper<RegExpMatchArray, number> {
-    return ([, result], { type } = { type: defaultType }) =>
+    return ([, result], { type }:any = { type: defaultType }) =>
         (patterns[type] || patterns[defaultType])
             .map(p => new RegExp(`^${p}`))
             .findIndex(pattern => pattern.test(result));

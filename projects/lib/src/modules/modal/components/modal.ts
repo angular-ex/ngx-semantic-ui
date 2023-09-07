@@ -72,7 +72,7 @@ export class SuiModal<T, U> implements OnInit, AfterViewInit {
     @Output("dismissed")
     public onDismiss:EventEmitter<void>;
 
-    @ViewChild("modal")
+    @ViewChild("modal", { static: true })
     private _modalElement:ElementRef;
 
     // Size used to display the modal.
@@ -144,7 +144,7 @@ export class SuiModal<T, U> implements OnInit, AfterViewInit {
     private _isClosing:boolean;
 
     // `ViewContainerRef` for the element the template gets injected as a sibling of.
-    @ViewChild("templateSibling", { read: ViewContainerRef })
+    @ViewChild("templateSibling", { read: ViewContainerRef, static: true })
     public templateSibling:ViewContainerRef;
 
     // Parent element of modal before relocation to document body.
@@ -261,7 +261,7 @@ export class SuiModal<T, U> implements OnInit, AfterViewInit {
         if (!this._mustAlwaysScroll && this._modalElement) {
 
             // Semantic UI modal margin and dimmer padding are 1rem, which is relative to the global font size, so for compatibility:
-            const fontSize = parseFloat(window.getComputedStyle(document.documentElement).getPropertyValue("font-size"));
+            const fontSize = parseFloat(window.getComputedStyle(document.documentElement as Element).getPropertyValue("font-size"));
             const margin = fontSize * 2;
             const element = this._modalElement.nativeElement as Element;
 
