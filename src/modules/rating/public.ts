@@ -1,3 +1,0 @@
-export {
-    SuiRatingModule
-} from "./internal";

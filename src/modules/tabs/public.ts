@@ -1,3 +1,0 @@
-export {
-    SuiTabsModule
-} from "./internal";
