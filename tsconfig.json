@@ -10,7 +10,7 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es2020",
+    "target": "ES2022",
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -19,9 +19,16 @@
       "dom"
     ],
     "paths": {
-      "ng2-semantic-ui": ["dist/lib"],
-      "ng2-semantic-ui/locales": ["dist/lib/locales"],
-      "ng2-semantic-ui/*": ["dist/lib/*"],
-    }
+      "ng2-semantic-ui": [
+        "dist/lib"
+      ],
+      "ng2-semantic-ui/locales": [
+        "dist/lib/locales"
+      ],
+      "ng2-semantic-ui/*": [
+        "dist/lib/*"
+      ]
+    },
+    "useDefineForClassFields": false
   }
 }
