@@ -1,6 +1,7 @@
 {
-  "$schema": "../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../dist",
+  "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
+  "dest": "../../dist/lib",
+  "deleteDestPath": false,
   "whitelistedNonPeerDependencies": [
     "bowser",
     "date-fns",
@@ -10,6 +11,6 @@
     "popper.js"
   ],
   "lib": {
-    "entryFile": "public.ts"
+    "entryFile": "src/public-api.ts"
   }
 }
