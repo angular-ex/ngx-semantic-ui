@@ -3,5 +3,13 @@
   "dest": "../../dist/lib",
   "lib": {
     "entryFile": "src/public-api.ts"
-  }
+  },
+  "allowedNonPeerDependencies": [
+    "bowser",
+    "date-fns",
+    "element-closest",
+    "extend",
+    "is-ua-webview",
+    "popper.js"
+  ]
 }

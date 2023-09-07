@@ -3,7 +3,7 @@ import { ApiDefinition } from "../../../components/api/api.component";
 import {
     SuiModalService, ModalTemplate, TemplateModalConfig, ComponentModalConfig,
     ModalSize, SuiModal
-} from "ngx-semantic-ui";
+} from "@angular-ex/semantic-ui";
 import { AlertModal } from "../../../modals/alert.modal";
 
 const exampleTemplateModalTemplate = `
@@ -160,7 +160,7 @@ export class ModalPage {
     public templateTemplate:string = exampleTemplateModalTemplate;
 
     public templateComponent:string = `
-import {SuiModalService, TemplateModalConfig, ModalTemplate} from 'ngx-semantic-ui';
+import {SuiModalService, TemplateModalConfig, ModalTemplate} from '@angular-ex/semantic-ui';
 
 export interface IContext {
     data:string;
@@ -190,7 +190,7 @@ public open(dynamicContent:string = "Example") {
 `;
 
     public componentComponent:string = `
-import {SuiModal, ComponentModalConfig, ModalSize} from "ngx-semantic-ui"
+import {SuiModal, ComponentModalConfig, ModalSize} from "@angular-ex/semantic-ui"
 
 interface IConfirmModalContext {
     title:string;

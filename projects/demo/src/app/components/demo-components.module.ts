@@ -1,7 +1,7 @@
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterModule } from "@angular/router";
-import { SuiCollapseModule, SuiPopupModule } from "ngx-semantic-ui";
+import { SuiCollapseModule, SuiPopupModule } from "@angular-ex/semantic-ui";
 
 import { ApiComponent } from "./api/api.component";
 import { CodeblockComponent } from "./codeblock/codeblock.component";

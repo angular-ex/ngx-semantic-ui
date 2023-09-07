@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { RouterModule } from "@angular/router";
-import { SuiModule } from "ngx-semantic-ui";
+import { SuiModule } from "@angular-ex/semantic-ui";
 import { DemoComponentsModule } from "../components/demo-components.module";
 
 import { GettingStartedPage } from "./getting-started/getting-started.page";

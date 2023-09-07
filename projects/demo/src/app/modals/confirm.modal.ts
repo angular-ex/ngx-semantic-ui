@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { SuiModal, ComponentModalConfig, ModalSize } from "ngx-semantic-ui";
+import { SuiModal, ComponentModalConfig, ModalSize } from "@angular-ex/semantic-ui";
 
 interface IConfirmModalContext {
     question:string;

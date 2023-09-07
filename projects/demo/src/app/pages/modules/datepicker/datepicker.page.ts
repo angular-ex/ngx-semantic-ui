@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { ApiDefinition } from "../../../components/api/api.component";
-import { DatepickerMode } from "ngx-semantic-ui";
+import { DatepickerMode } from "@angular-ex/semantic-ui";
 
 const exampleStandardTemplate = `
 <div class="ui form">

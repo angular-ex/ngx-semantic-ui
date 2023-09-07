@@ -5,9 +5,9 @@
     "outDir": "../../out-tsc/app",
     "types": [],
     "paths": {
-      "ngx-semantic-ui": ["dist/lib"],
-      "ngx-semantic-ui/locales": ["dist/lib/locales"],
-      "ngx-semantic-ui/*": ["dist/lib/*"]
+      "@angular-ex/semantic-ui": ["dist/lib"],
+      "@angular-ex/semantic-ui/locales": ["dist/lib/locales"],
+      "@angular-ex/semantic-ui/*": ["dist/lib/*"]
     },
   },
   "files": [

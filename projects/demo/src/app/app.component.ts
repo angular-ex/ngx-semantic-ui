@@ -1,5 +1,5 @@
 import { Component, HostBinding } from "@angular/core";
-import { SuiPopupConfig } from "ngx-semantic-ui";
+import { SuiPopupConfig } from "@angular-ex/semantic-ui";
 
 @Component({
     selector: "demo-root",

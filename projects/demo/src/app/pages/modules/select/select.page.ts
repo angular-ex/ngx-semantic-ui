@@ -1,6 +1,5 @@
 import { Component } from "@angular/core";
 import { ApiDefinition } from "../../../components/api/api.component";
-import { LookupFn } from "ngx-semantic-ui";
 
 const exampleStandardTemplate = `
 <div class="ui segments">

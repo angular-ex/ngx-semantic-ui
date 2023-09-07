@@ -87,7 +87,7 @@ export class MessagePage {
 `;
 
     public manualDismissCode:string = `
-import {IMessage} from "ngx-semantic-ui";
+import {IMessage} from "@angular-ex/semantic-ui";
 
 @Component({})
 export class MyComponent {

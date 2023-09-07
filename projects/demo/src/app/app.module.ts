@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { CommonModule } from "@angular/common";
-import { SuiSidebarModule, SuiPopupModule } from "ngx-semantic-ui";
+import { SuiSidebarModule, SuiPopupModule } from "@angular-ex/semantic-ui";
 
 import { DemoRoutingModule } from "./app.routing";
 import { DemoComponentsModule } from "./components/demo-components.module";
