@@ -25,7 +25,8 @@
     "element-closest": "^2.0.2",
     "extend": "^3.0.1",
     "is-ua-webview": "^1.0.0",
-    "popper.js": "^1.14.0"
+    "popper.js": "^1.14.0",
+    "tslib": "^2.0.0"
   },
   "peerDependencies": {
     "@angular/common": ">= 6.0.0",
