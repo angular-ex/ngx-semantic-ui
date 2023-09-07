@@ -12,8 +12,8 @@
 
 <!-- Badges -->
 <p align="center">
-  <a href="https://travis-ci.org/edcarroll/ng2-semantic-ui">
-    <img alt="Travis CI" src="https://img.shields.io/travis/edcarroll/ng2-semantic-ui.svg?style=flat-square" />
+  <a href="https://github.com/angular-ex/ngx-semantic-ui/actions/workflows/development.yml">
+    <img alt="Test CI" src="https://github.com/angular-ex/ngx-semantic-ui/actions/workflows/development.yml/badge.svg?branch=main&event=push" />
   </a>
   <a href="https://www.npmjs.com/package/ng2-semantic-ui">
     <img alt="npm" src="https://img.shields.io/npm/v/ng2-semantic-ui.svg?style=flat-square" />
