@@ -60,7 +60,7 @@
           "options": {
             "outputPath": "dist/demo",
             "index": "projects/demo/src/index.html",
-            "main": "demo/src/main.ts",
+            "main": "projects/demo/src/main.ts",
             "polyfills": "projects/demo/src/polyfills.ts",
             "tsConfig": "projects/demo/tsconfig.json",
             "aot": true,
