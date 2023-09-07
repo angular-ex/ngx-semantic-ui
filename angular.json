@@ -10,16 +10,16 @@
       "prefix": "sui",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/lib/tsconfig.json",
             "project": "projects/lib/ng-package.json"
           },
           "configurations": {
             "production": {
-              "project": "projects/lib/ng-package.prod.json"
-            ,              "tsConfig": "projects/lib/tsconfig.lib.prod.json"
-}
+              "project": "projects/lib/ng-package.prod.json",
+              "tsConfig": "projects/lib/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {

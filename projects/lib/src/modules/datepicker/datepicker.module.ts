@@ -28,14 +28,12 @@ import {
     ],
     declarations: [
         SuiCalendarItem,
-
         SuiCalendarViewTitle,
         SuiCalendarYearView,
         SuiCalendarMonthView,
         SuiCalendarDateView,
         SuiCalendarHourView,
         SuiCalendarMinuteView,
-
         SuiDatepicker,
         SuiDatepickerDirective,
         SuiDatepickerDirectiveValueAccessor,
@@ -47,9 +45,6 @@ import {
         SuiDatepickerDirectiveValueAccessor,
         SuiDatepickerDirectiveValidator,
         SuiDatepickerInputDirective
-    ],
-    entryComponents: [
-        SuiDatepicker
     ]
 })
 export class SuiDatepickerModule {}

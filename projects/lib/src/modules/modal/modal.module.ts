@@ -23,9 +23,6 @@ import { SuiModalDimmer } from "./components/dimmer";
     ],
     providers: [
         SuiModalService
-    ],
-    entryComponents: [
-        SuiModal
     ]
 })
 export class SuiModalModule {}

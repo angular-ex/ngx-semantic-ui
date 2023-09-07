@@ -24,9 +24,6 @@ import { SuiPopupConfig } from "./services/popup.service";
     ],
     providers: [
         SuiPopupConfig
-    ],
-    entryComponents: [
-        SuiPopup
     ]
 })
 

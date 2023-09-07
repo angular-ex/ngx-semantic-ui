@@ -7,7 +7,6 @@ import { ConfirmModalComponent } from "./confirm.modal";
 @NgModule({
     imports: [
         CommonModule,
-
         SuiModalModule
     ],
     declarations: [
@@ -15,10 +14,6 @@ import { ConfirmModalComponent } from "./confirm.modal";
         ConfirmModalComponent
     ],
     exports: [
-        AlertModalComponent,
-        ConfirmModalComponent
-    ],
-    entryComponents: [
         AlertModalComponent,
         ConfirmModalComponent
     ]

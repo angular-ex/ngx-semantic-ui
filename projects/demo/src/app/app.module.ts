@@ -15,10 +15,8 @@ import { AppComponent } from "./app.component";
     imports: [
         BrowserModule,
         CommonModule,
-
         SuiSidebarModule,
         SuiPopupModule,
-
         DemoRoutingModule,
         DemoComponentsModule,
         DemoModalsModule,
@@ -26,7 +24,6 @@ import { AppComponent } from "./app.component";
     ],
     declarations: [AppComponent],
     providers: [],
-    entryComponents: [AppComponent],
     bootstrap: [AppComponent]
 })
 export class AppModule {}

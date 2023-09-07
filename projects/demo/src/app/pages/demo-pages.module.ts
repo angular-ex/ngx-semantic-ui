@@ -45,11 +45,9 @@ import { TestPage } from "./development/test/test.page";
     ],
     declarations: [
         GettingStartedPage,
-
         // Collections
         MessagePageComponents,
         PaginationPageComponents,
-
         // Modules
         AccordionPageComponents,
         CheckboxPageComponents,
@@ -66,16 +64,11 @@ import { TestPage } from "./development/test/test.page";
         SidebarPageComponents,
         TabsPageComponents,
         TransitionPageComponents,
-
         // Behaviors
         LocalizationPageComponents,
-
         // Development
         TestPage
     ],
-    exports: [],
-    entryComponents: [
-        ConfirmModalComponent
-    ]
+    exports: []
 })
 export class DemoPagesModule {}
