@@ -18,7 +18,8 @@
           "configurations": {
             "production": {
               "project": "projects/lib/ng-package.prod.json"
-            }
+            ,              "tsConfig": "projects/lib/tsconfig.lib.prod.json"
+}
           }
         },
         "test": {
@@ -76,6 +77,12 @@
           },
           "configurations": {
             "production": {
+              "budgets": [
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
+                }
+              ],
               "fileReplacements": [
                 {
                   "replace": "projects/demo/src/environments/environment.ts",
@@ -87,7 +94,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true
