@@ -1,13 +1,13 @@
 <!-- Logo -->
 <p align="center">
-  <a href="https://edcarroll.github.io/ng2-semantic-ui/">
+  <a href="https://angular-ex.github.io/ngx-semantic-ui/">
     <img height="128" width="238" src="https://raw.githubusercontent.com/angular-ex/ngx-semantic-ui/main/projects/demo/src/assets/logo.png">
   </a>
 </p>
 
 <!-- Name -->
 <h1 align="center">
-  <a href="https://edcarroll.github.io/ng2-semantic-ui">@angular-ex/semantic-ui</a>
+  <a href="https://angular-ex.github.io/ngx-semantic-ui">@angular-ex/semantic-ui</a>
 </h1>
 
 <!-- Badges -->
@@ -37,7 +37,7 @@ Note that only Semantic UI elements that use jQuery are recreated here - those w
 $ npm install @angular-ex/semantic-ui --save
 ```
 
-See the [Documentation](https://edcarroll.github.io/ng2-semantic-ui) for more instructions and extensive examples.
+See the [Documentation](https://angular-ex.github.io/ngx-semantic-ui) for more instructions and extensive examples.
 
 ## Dependencies
 
@@ -48,8 +48,8 @@ See the [Documentation](https://edcarroll.github.io/ng2-semantic-ui) for more in
 
 |           Icon          |                                      Description                                    |
 |-------------------------|-------------------------------------------------------------------------------------|
-| :white_check_mark:      | Component supported by ng2-semantic-ui.                                             |
-| :rocket:                | Semantic UI plugin supported by ng2-semantic-ui (not in Semantic UI Core).          |
+| :white_check_mark:      | Component supported by @angular-ex/semantic-ui.                                             |
+| :rocket:                | Semantic UI plugin supported by @angular-ex/semantic-ui (not in Semantic UI Core).          |
 | :ballot_box_with_check: | Component supported natively by [Semantic UI](https://semantic-ui.com/) (CSS only). |
 | :x:                     | Component currently unavailable.                                                    |
 | :no_entry_sign:         | Component not applicable to Angular.                                                |
