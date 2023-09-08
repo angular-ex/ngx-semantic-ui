@@ -40,7 +40,7 @@ export class SuiSelect<T, U> extends SuiSelectBase<T, U> implements ICustomValue
     // Stores the value written by ngModel before it can be matched to an option from `options`.
     private _writtenOption?:U;
 
-    @ViewChild("optionTemplateSibling", { read: ViewContainerRef })
+    @ViewChild("optionTemplateSibling", { read: ViewContainerRef, static: true })
     private _optionTemplateSibling!:ViewContainerRef;
 
     @Output()

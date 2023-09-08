@@ -21,7 +21,7 @@ export abstract class SuiSelectBase<T, U> implements AfterContentInit, OnDestroy
     public dropdownService:DropdownService;
     public searchService:SearchService<T, U>;
 
-    @ViewChild(SuiDropdownMenu)
+    @ViewChild(SuiDropdownMenu, { static: true })
     protected _menu!:SuiDropdownMenu;
 
     // Keep track of all of the rendered select options. (Rendered by the user using *ngFor).
@@ -61,7 +61,7 @@ export abstract class SuiSelectBase<T, U> implements AfterContentInit, OnDestroy
         return this.searchService.isSearching;
     }
 
-    @ViewChild(SuiSelectSearch)
+    @ViewChild(SuiSelectSearch, { static: true })
     private _internalSearch?:SuiSelectSearch;
 
     @ContentChild(SuiSelectSearch)

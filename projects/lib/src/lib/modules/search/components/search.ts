@@ -56,7 +56,7 @@ export class SuiSearch<T> implements AfterViewInit {
     public dropdownService:DropdownService;
     public searchService:SearchService<T, T>;
 
-    @ViewChild(SuiDropdownMenu)
+    @ViewChild(SuiDropdownMenu, { static: true })
     private _menu!:SuiDropdownMenu;
 
     // Sets the Semantic UI classes on the host element.

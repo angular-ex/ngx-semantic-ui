@@ -1,5 +1,6 @@
 import { Component, AfterViewInit, Input, ChangeDetectorRef } from "@angular/core";
-import * as Prism from 'prismjs';
+
+declare const Prism: any;
 
 @Component({
     selector: "demo-codeblock",

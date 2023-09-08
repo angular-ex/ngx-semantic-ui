@@ -137,7 +137,9 @@ export class SuiTabset implements AfterContentInit {
 
     // Activate the first tab in the set.
     public activateFirstTab():void {
-        this.activeTab = this.tabs[0];
+        if (this.tabs && this.tabs.length) {
+            this.activeTab = this.tabs[0];
+        }
     }
 
     // Activates the closest available tab to a given one.

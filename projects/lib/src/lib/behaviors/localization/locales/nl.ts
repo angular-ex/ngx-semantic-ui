@@ -34,10 +34,10 @@ const nl:IPartialLocaleValues = {
         ],
         formats: {
             time: "HH:mm",
-            datetime: "D MMMM YYYY HH:mm",
-            date: "D MMMM YYYY",
-            month: "MMMM YYYY",
-            year: "YYYY"
+            datetime: "d MMMM yyyy HH:mm",
+            date: "d MMMM yyyy",
+            month: "MMMM yyyy",
+            year: "yyyy"
         },
         firstDayOfWeek: 1
     },

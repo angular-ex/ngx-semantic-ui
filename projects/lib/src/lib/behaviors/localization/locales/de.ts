@@ -24,8 +24,8 @@ const de:IPartialLocaleValues = {
         ],
         formats: {
             time: "HH:mm",
-            datetime: "D. MMMM YYYY HH:mm",
-            date: "D. MMMM YYYY",
+            datetime: "d. MMMM YYYY HH:mm",
+            date: "d. MMMM YYYY",
             month: "MMMM YYYY",
             year: "YYYY"
         },

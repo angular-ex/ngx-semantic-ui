@@ -40,7 +40,7 @@ export class SuiSelectOption<T> extends SuiDropdownMenuItem {
     public usesTemplate:boolean;
 
     // Placeholder to draw template beside.
-    @ViewChild("templateSibling", { read: ViewContainerRef })
+    @ViewChild("templateSibling", { read: ViewContainerRef, static: true })
     public templateSibling!:ViewContainerRef;
 
     constructor(renderer:Renderer2, element:ElementRef, public changeDetector:ChangeDetectorRef) {

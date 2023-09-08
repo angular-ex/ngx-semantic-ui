@@ -1,6 +1,6 @@
 import { IDatepickerLocaleValues } from "../../../behaviors/localization/internal";
 import { format, parse } from "date-fns";
-import * as defaultLocale from "date-fns/locale/en-US";
+import { enUS } from "date-fns/locale";
 
 interface IDateFnsLocaleValues { [name:string]:string[]; }
 interface IDateFnsHelperOptions { type?:string; }
@@ -33,24 +33,25 @@ function buildLocalizeFn(values:IDateFnsLocaleValues,
                          defaultType:string,
                          indexCallback?:(oldIndex:number) => number):DateFnsHelper<number, string> {
 
-    return (dirtyIndex:number, { type }: any = { type: defaultType }) => {
+    return (dirtyIndex:number, options:IDateFnsHelperOptions) => {
         const index = indexCallback ? indexCallback(dirtyIndex) : dirtyIndex;
+        const type = options.type || defaultType;
         return values[type][index];
     };
 }
 
 function buildLocalizeArrayFn(values:IDateFnsLocaleValues, defaultType:string):DateFnsHelper<IDateFnsHelperOptions, string[]> {
-    return ({ type }: any = { type: defaultType }) => values[type];
+    return (options:IDateFnsHelperOptions) => values[options.type || defaultType];
 }
 
 function buildMatchFn(patterns:IDateFnsLocaleValues, defaultType:string):DateFnsHelper<string, RegExpMatchArray | null> {
-    return (dirtyString, { type }: any = { type: defaultType }) =>
-        dirtyString.match(`^(${patterns[type].join("|")})`);
+    return (dirtyString, options:IDateFnsHelperOptions) =>
+        dirtyString.match(`^(${patterns[options.type || defaultType].join("|")})`);
 }
 
 function buildParseFn(patterns:IDateFnsLocaleValues, defaultType:string):DateFnsHelper<RegExpMatchArray, number> {
-    return ([, result], { type }: any = { type: defaultType }) =>
-        (patterns[type] || patterns[defaultType])
+    return ([, result], options:IDateFnsHelperOptions) =>
+        (patterns[options.type || defaultType] || patterns[defaultType])
             .map(p => new RegExp(`^${p}`))
             .findIndex(pattern => pattern.test(result));
 }
@@ -91,7 +92,7 @@ export class DateFnsParser {
             short: locale.timesOfDayUppercase.concat(locale.timesOfDayLowercase)
         };
 
-        this._locale = defaultLocale as any;
+        this._locale = enUS as any;
         this._locale.localize = {
             ...this._locale.localize,
             ...{

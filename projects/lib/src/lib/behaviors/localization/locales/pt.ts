@@ -24,10 +24,10 @@ const pt:IPartialLocaleValues = {
         ],
         formats: {
             time: "HH:mm",
-            datetime: "D MMMM [de] YYYY HH:mm",
-            date: "D [de] MMMM [de] YYYY",
-            month: "MMMM [de] YYYY",
-            year: "YYYY"
+            datetime: "d MMMM [de] yyyy HH:mm",
+            date: "d [de] MMMM [de] yyyy",
+            month: "MMMM [de] yyyy",
+            year: "yyyy"
         },
         firstDayOfWeek: 1
     },

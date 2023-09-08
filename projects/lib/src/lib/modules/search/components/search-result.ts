@@ -48,7 +48,7 @@ export class SuiSearchResult<T> {
     }
 
     // Placeholder to draw template beside.
-    @ViewChild("templateSibling", { read: ViewContainerRef })
+    @ViewChild("templateSibling", { read: ViewContainerRef, static: true })
     public templateSibling!:ViewContainerRef;
 
     constructor(public componentFactory:SuiComponentFactory) {
