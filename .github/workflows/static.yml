@@ -34,7 +34,7 @@ jobs:
       - name: Build package
         run: |
           npm install
-          npm run build:prod
+          npm run build:ghpg
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact

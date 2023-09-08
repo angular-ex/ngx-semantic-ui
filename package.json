@@ -11,10 +11,12 @@
     "demo:lint": "ng lint demo",
     "demo:build": "ng build demo",
     "demo:build:prod": "ng build demo --configuration production",
+    "demo:build:ghpg": "ng build demo --configuration production --deploy-url /ngx-semantic-ui",
     "demo:serve": "ng serve demo --host 0.0.0.0",
     "start": "npm run lib:build && npm run demo:serve",
     "build": "npm run lib:build && npm run demo:build",
     "build:prod": "npm run lib:build:prod && npm run demo:build:prod",
+    "build:ghpg": "npm run lib:build:prod && npm run demo:build:ghpg",
     "watch": "ng build --watch --configuration development",
     "test": "npm run lib:test",
     "lint": "npm run lib:lint && npm run demo:lint"
