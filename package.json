@@ -1,6 +1,6 @@
 {
   "name": "@angular-ex/semantic-ui",
-  "version": "16.0.0",
+  "version": "16.0.1",
   "scripts": {
     "ng": "ng",
     "lib:lint": "ng lint lib",
