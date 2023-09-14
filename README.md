@@ -83,8 +83,8 @@ Want to file a bug, contribute some code, or improve documentation? Great! Pleas
 To generate all library files:
 
 ```bash
-$ npm run lib:compile
-# use lib:compile:w to watch for changes
+$ npm run lib:build
+# use lib:build:w to watch for changes
 ```
 
 To run the demo app:

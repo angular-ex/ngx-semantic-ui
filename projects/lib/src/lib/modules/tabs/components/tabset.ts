@@ -8,10 +8,10 @@ import { Tab } from "../classes/tab";
     template: `<ng-content></ng-content>`
 })
 export class SuiTabset implements AfterContentInit {
-    @ContentChildren(SuiTabHeader)
+    @ContentChildren(SuiTabHeader, { descendants: true })
     private _tabHeaders!:QueryList<SuiTabHeader>;
 
-    @ContentChildren(SuiTabContent)
+    @ContentChildren(SuiTabContent, { descendants: true })
     private _tabContents!:QueryList<SuiTabContent>;
 
     // List of all tabs in the tabset.
