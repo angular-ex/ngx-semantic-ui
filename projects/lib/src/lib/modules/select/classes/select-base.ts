@@ -1,6 +1,6 @@
 import {
     ViewChild, HostBinding, ElementRef, HostListener, Input, ContentChildren, QueryList,
-    AfterContentInit, TemplateRef, ViewContainerRef, ContentChild, EventEmitter, Output, OnDestroy, Directive
+    AfterViewInit, TemplateRef, ViewContainerRef, ContentChild, EventEmitter, Output, OnDestroy, Directive
 } from "@angular/core";
 import { Subscription } from "rxjs";
 import { DropdownService, SuiDropdownMenu } from "../../dropdown/internal";
@@ -17,11 +17,11 @@ export interface IOptionContext<T> extends ITemplateRefContext<T> {
 // We use generic type T to specify the type of the options we are working with,
 // and U to specify the type of the property of the option used as the value.
 @Directive()
-export abstract class SuiSelectBase<T, U> implements AfterContentInit, OnDestroy {
+export abstract class SuiSelectBase<T, U> implements AfterViewInit, OnDestroy {
     public dropdownService:DropdownService;
     public searchService:SearchService<T, U>;
 
-    @ViewChild(SuiDropdownMenu, { static: true })
+    @ViewChild(SuiDropdownMenu)
     protected _menu!:SuiDropdownMenu;
 
     // Keep track of all of the rendered select options. (Rendered by the user using *ngFor).
@@ -43,7 +43,10 @@ export abstract class SuiSelectBase<T, U> implements AfterContentInit, OnDestroy
 
     @HostBinding("class.visible")
     public get isVisible():boolean {
-        return this._menu.isVisible;
+        if (this._menu) {
+            return this._menu.isVisible;
+        }
+        return false;
     }
 
     @Input()
@@ -246,7 +249,7 @@ export abstract class SuiSelectBase<T, U> implements AfterContentInit, OnDestroy
         this.hasClasses = true;
     }
 
-    public ngAfterContentInit():void {
+    public ngAfterViewInit():void {
         this._menu.service = this.dropdownService;
         // We manually specify the menu items to the menu because the @ContentChildren doesn't pick up our dynamically rendered items.
         this._menu.items = this._renderedOptions;
@@ -287,7 +290,7 @@ export abstract class SuiSelectBase<T, U> implements AfterContentInit, OnDestroy
         // The search delay is set to the transition duration to ensure results
         // aren't rendered as the select closes as that causes a sudden flash.
         if (delayed) {
-            this.searchService.searchDelay = this._menu.menuTransitionDuration;
+            this.searchService.searchDelay = this._menu?.menuTransitionDuration;
             this.searchService.updateQueryDelayed("");
         } else {
             this.searchService.updateQuery("");
