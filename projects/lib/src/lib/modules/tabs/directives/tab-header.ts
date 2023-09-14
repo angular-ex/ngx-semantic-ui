@@ -1,4 +1,4 @@
-import { HostBinding, Input, Directive, EventEmitter, HostListener, Output } from "@angular/core";
+import { HostBinding, Input, Directive, EventEmitter, HostListener, Output, ElementRef } from "@angular/core";
 
 @Directive({
     selector: "[suiTabHeader]"
@@ -69,7 +69,7 @@ export class SuiTabHeader {
         }
     }
 
-    constructor() {
+    constructor(public eleRef: ElementRef) {
         this._isActive = false;
         this.isActiveChange = new EventEmitter<boolean>();
         this.isActiveExternalChange = new EventEmitter<boolean>();

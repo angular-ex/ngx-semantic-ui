@@ -11,7 +11,7 @@ export class SuiTabset implements AfterContentInit {
     @ContentChildren(SuiTabHeader, { descendants: true })
     private _tabHeaders!:QueryList<SuiTabHeader>;
 
-    @ContentChildren(SuiTabContent, { descendants: true })
+    @ContentChildren(SuiTabContent)
     private _tabContents!:QueryList<SuiTabContent>;
 
     // List of all tabs in the tabset.
@@ -65,12 +65,17 @@ export class SuiTabset implements AfterContentInit {
 
     // Connects tab headers to tab contents, and creates a tab instance for each pairing.
     private loadTabs():void {
+        const parentEleFirstTab = this._tabHeaders.first.eleRef.nativeElement.parentElement;
         // Remove any tabs that no longer have an associated header.
         this.tabs = this.tabs.filter(t => !!this._tabHeaders.find(tH => tH === t.header));
 
         this._tabHeaders
             // Filter out the loaded headers with attached tab instances.
-            .filter(tH => !this.tabs.find(t => t.header === tH))
+            .filter(tH => 
+                !this.tabs.find(t => t.header === tH)
+                // Fix for ContentChildren can't see elements in ng-content like tab-header
+                && (tH.eleRef.nativeElement.parentElement === parentEleFirstTab)
+            )
             .forEach(tH => {
                 const content = this._tabContents.find(tC => tC.id === tH.id);
 
